@@ -4,60 +4,65 @@ A modern, visually compelling landing page for NexHub - Africa's education verif
 
 ## Design Philosophy
 
-This landing page embodies a **powerful, confident, and infrastructure-grade** aesthetic while maintaining elegance. It's designed to convey trust, scale, and national-level digital infrastructure - not a minimalist startup experiment.
+This landing page embodies a **powerful, confident, and infrastructure-grade** aesthetic while maintaining elegance. It's designed to convey trust, scale, and national-level digital infrastructure.
 
 ## Features
 
 ### 🎨 Visual Design
 
 - **Custom Color Palette**: Carefully crafted green-based color scheme representing growth, trust, and African identity
-- **Animated Elements**: Smooth, purposeful animations using Framer Motion
-- **Particle Effects**: Dynamic background particles and radial glows
-- **Breathing Animations**: The NexHub logo features a subtle breathing effect with green glow
-- **Hover Effects**: Interactive cards with glow effects and smooth transitions
+- **Animated Elements**: Smooth, purposeful animations using Framer Motion and React Icons
+- **Loading Animation**: A stunning animated splash screen with your NexHub logo appears on page load.
+- **Particle Effects**: Dynamic background particles and radial glows in the Hero section.
+- **Breathing Animations**: The NexHub logo features a subtle breathing effect with green glow.
+- **Hover Effects**: Interactive cards with glow effects and smooth transitions.
 
 ### 📑 Sections
 
-1. **Hero Section** (Full Screen)
+1.  **Hero Section** (Full Screen)
 
-   - Animated title with breathing animation and soft green glow
-   - Floating particles in the background
-   - Dark gradient background
-   - Scroll indicator
+    - Animated title with breathing animation and soft green glow.
+    - Floating particles in the background.
+    - Dark gradient background.
+    - React Icon scroll indicator.
 
-2. **What NexHub Does**
+2.  **What NexHub Does**
 
-   - 3-step horizontal visual flow
-   - Animated progress indicators
-   - Clear value proposition
+    - Updated body text focusing on verified learning activity and student participation.
+    - A new subsection: "What a verified learning record includes" with 5 key points and React Icons.
+    - Emphasis on learning activity over time, not just results.
+    - Privacy note: "Records are private by default and shared only with permission."
+    - 3-step horizontal visual flow with animated progress indicators and clear value proposition.
 
-3. **Who It Serves**
+3.  **Who It Serves**
 
-   - Three animated cards for Students, Schools, and Institutions & Government
-   - Hover effects with glowing borders
-   - Clear benefit lists
+    - Four animated cards for **Students**, **Schools**, **Parents**, and **NGOs & Education Programs**.
+    - Updated Student card content to focus on verified learning records and activity.
+    - New Parents card emphasizing visibility into learning progress without management.
+    - Institutions & Government section replaced with NGOs & Education Programs, focusing on verification and program impact.
+    - Hover effects with glowing borders and React Icons.
 
-4. **Why This Matters**
+4.  **Why This Matters**
 
-   - Government alignment messaging
-   - Emphasis on education funding and verified data
-   - Visual accent elements
+    - Softened language, now titled "Trusted infrastructure for education data."
+    - Focuses on creating a trusted foundation for education planning, program evaluation, and funding transparency.
+    - Removes direct claims of controlling or allocating funding.
+    - Visual accent elements and React Icons.
 
-5. **Trust & Security**
+5.  **Trust & Security**
 
-   - Privacy-first design principles
-   - Four key security features
-   - Shield icon animation
+    - Privacy-first by design with four key security features and React Icons.
+    - Added statement: "Verification reflects educator review and institutional validation — not automated scoring."
 
-6. **Status**
+6.  **Status**
 
-   - Private rollout information
-   - Contact information with hover effects
-   - Active development indicator
+    - Private rollout information.
+    - Contact information with hover effects.
+    - Active development indicator.
 
-7. **Footer**
-   - "Built in Africa" messaging
-   - Clean, minimal design
+7.  **Footer**
+    - "Built in Africa" messaging with `HiGlobe` React Icon.
+    - Clean, minimal design.
 
 ## Tech Stack
 
@@ -65,6 +70,7 @@ This landing page embodies a **powerful, confident, and infrastructure-grade** a
 - **TypeScript** - Type-safe development
 - **Tailwind CSS v4** - Utility-first CSS with custom theme
 - **Framer Motion** - Animation library for smooth interactions
+- **React Icons** - Professional icon library
 
 ## Getting Started
 
@@ -113,29 +119,58 @@ dark-icon: #B7D6C6
 nexhub-website/
 ├── app/
 │   ├── globals.css          # Global styles with custom animations
-│   ├── layout.tsx            # Root layout with metadata
-│   └── page.tsx              # Main page component
+│   ├── layout.tsx            # Root layout with metadata and SEO configurations
+│   └── page.tsx              # Main page component, includes LoadingScreen
+├── assets/
+│   ├── images/               # Your favicon and PWA icons
+│   └── logo/                 # Your NexHub logo SVG files
 ├── components/
-│   ├── Hero.tsx              # Hero section with animations
-│   ├── WhatWeDoSection.tsx   # What NexHub does
-│   ├── WhoWeServeSection.tsx # Target audience cards
-│   ├── WhyItMattersSection.tsx # Government alignment
-│   ├── TrustSecuritySection.tsx # Privacy and security
-│   ├── StatusSection.tsx     # Current status
-│   └── Footer.tsx            # Footer component
-└── public/                   # Static assets
+│   ├── Footer.tsx
+│   ├── Hero.tsx
+│   ├── LoadingScreen.tsx     # Animated logo splash screen
+│   ├── StatusSection.tsx
+│   ├── TrustSecuritySection.tsx
+│   ├── WhatWeDoSection.tsx
+│   ├── WhoWeServeSection.tsx # Includes Parents card
+│   ├── WhyItMattersSection.tsx
+├── public/                   # Static assets, now includes your copied assets
+│   ├── favicon.png           # Your favicon
+│   ├── icon.png              # For Apple touch icon
+│   ├── icon-192.png          # PWA icon
+│   ├── icon-512.png          # PWA icon
+│   ├── icon.svg              # Your SVG logo for favicon/PWA
+│   ├── manifest.json         # PWA configuration
+│   ├── robots.txt            # Search engine crawling rules
+│   └── sitemap.xml           # Site structure for indexing
+├── SEO-GUIDE.md              # Comprehensive SEO documentation
+└── ... other config files ...
 ```
 
 ## Animations
 
 The page features several types of animations:
 
-- **Breathing Effect**: Scale animation on the main heading
-- **Particle System**: 30 animated light particles in the hero section
-- **Scroll Animations**: Elements animate in as they enter the viewport
-- **Hover Effects**: Cards glow and lift on hover
-- **Gradient Animations**: Animated border glows and radial effects
-- **Floating Elements**: Subtle floating animations throughout
+- **Logo Loading Animation**: A detailed animated sequence of your NexHub logo with glowing effects and pulsing dots on initial load.
+- **Breathing Effect**: Scale animation on the main heading.
+- **Particle System**: 30 animated light particles in the hero section.
+- **Scroll Animations**: Elements animate in as they enter the viewport using `useInView`.
+- **Hover Effects**: Cards glow and lift on hover, icons react to hover.
+- **Gradient Animations**: Animated border glows and radial effects.
+- **Floating Elements**: Subtle floating animations throughout.
+
+## SEO (Search Engine Optimization)
+
+This landing page is highly optimized for search engines, targeting terms like "NexHub", "school infrastructure", "education verification", and "education technology in Africa".
+
+- **Comprehensive Meta Tags**: Optimized title, description, and 30+ keywords for improved search rankings.
+- **Open Graph & Twitter Cards**: Configured for rich social media sharing previews (Twitter card metadata is commented out as NexHub does not currently have a Twitter account).
+- **Structured Data (JSON-LD)**: Includes `Organization`, `Website`, `SoftwareApplication`, and `Person` (Founder) schemas to provide rich snippets in search results.
+- **`robots.txt` & `sitemap.xml`**: Configured for efficient crawling and indexing by search engines.
+- **PWA Manifest**: Configured for Progressive Web App capabilities.
+- **Favicon & App Icons**: Using your provided NexHub logo assets.
+- **Semantic HTML**: Ensures proper hierarchy and accessibility for search engine understanding.
+
+For a detailed guide on SEO, refer to `SEO-GUIDE.md`.
 
 ## Customization
 
@@ -167,10 +202,10 @@ Animation parameters can be modified in each component using Framer Motion's pro
 
 ## Performance
 
-- Uses Framer Motion's optimized animations
-- Components use `useInView` hook for scroll-triggered animations
-- Implements lazy animation loading
-- Optimized with Next.js 16 Turbopack
+- Uses Framer Motion's optimized animations.
+- Components use `useInView` hook for scroll-triggered animations.
+- Implements lazy animation loading.
+- Optimized with Next.js 16 Turbopack.
 
 ## Browser Support
 
@@ -185,6 +220,6 @@ Animation parameters can be modified in each component using Framer Motion's pro
 
 ---
 
-**Built in Africa** 🌍
+**Built in Nigeria. Designed to scale**
 
 Infrastructure for education trust
