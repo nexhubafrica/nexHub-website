@@ -79,12 +79,12 @@ export default function TrustSecuritySection() {
               whileHover={{ y: -5 }}
             >
               {/* Background Glow on Hover */}
-              <div className="absolute inset-0 bg-gradient-to-br from-dark-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-dark-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <div className="relative z-10 flex items-start gap-6">
                 {/* Icon */}
                 <motion.div
-                  className="text-dark-primary-bright flex-shrink-0"
+                  className="text-dark-primary-bright shrink-0"
                   whileHover={{ rotate: [0, -10, 10, -10, 0], scale: 1.2 }}
                   transition={{ duration: 0.5 }}
                 >
@@ -109,7 +109,7 @@ export default function TrustSecuritySection() {
                 animate={isInView ? { scale: 1 } : {}}
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
               >
-                <div className="w-full h-full bg-gradient-to-tl from-dark-primary to-transparent rounded-tl-full"></div>
+                <div className="w-full h-full bg-linear-to-tl from-dark-primary to-transparent rounded-tl-full"></div>
               </motion.div>
             </motion.div>
           ))}

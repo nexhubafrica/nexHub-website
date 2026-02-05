@@ -236,7 +236,7 @@ export default function LoadingScreen() {
                 }}
               >
                 <span
-                  className="bg-gradient-to-r from-dark-primary-bright to-dark-primary bg-clip-text text-transparent"
+                  className="bg-linear-to-r from-dark-primary-bright to-dark-primary bg-clip-text text-transparent"
                   style={{
                     filter: "drop-shadow(0 0 20px rgba(86, 179, 138, 0.6))",
                   }}

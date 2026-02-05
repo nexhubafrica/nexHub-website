@@ -78,7 +78,7 @@ export default function WhoWeServeSection() {
             >
               <div className="relative bg-dark-card border border-dark-card-alt rounded-2xl p-8 h-full transition-all duration-500 hover:border-dark-primary hover:transform hover:-translate-y-2">
                 {/* Glow Effect on Hover */}
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-dark-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                <div className="absolute inset-0 rounded-2xl bg-linear-to-br from-dark-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                 {/* Card Content */}
                 <div className="relative z-10">
@@ -120,7 +120,7 @@ export default function WhoWeServeSection() {
 
                 {/* Bottom Accent Line */}
                 <motion.div
-                  className="absolute bottom-0 left-0 h-1 bg-gradient-to-r from-dark-primary to-dark-primary-bright rounded-b-2xl"
+                  className="absolute bottom-0 left-0 h-1 bg-linear-to-r from-dark-primary to-dark-primary-bright rounded-b-2xl"
                   initial={{ width: "0%" }}
                   whileInView={{ width: "100%" }}
                   transition={{ duration: 1, delay: 0.5 + index * 0.15 }}

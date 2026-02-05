@@ -83,7 +83,7 @@ export default function StatusSection() {
             whileHover={{ scale: 1.02 }}
           >
             {/* Glow Effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-dark-primary/20 via-transparent to-dark-primary-bright/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+            <div className="absolute inset-0 bg-linear-to-br from-dark-primary/20 via-transparent to-dark-primary-bright/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
             <div className="relative z-10">
               <p className="text-dark-text-secondary text-lg mb-4">

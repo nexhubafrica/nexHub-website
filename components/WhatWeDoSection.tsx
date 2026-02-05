@@ -36,7 +36,7 @@ export default function WhatWeDoSection() {
   return (
     <section ref={ref} className="relative py-32 px-6 bg-dark-bg-alt">
       {/* Background Accent */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-dark-primary to-transparent opacity-50"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-linear-to-r from-transparent via-dark-primary to-transparent opacity-50"></div>
 
       <div className="max-w-7xl mx-auto">
         {/* Heading */}
@@ -110,7 +110,7 @@ export default function WhatWeDoSection() {
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
               >
-                <div className="text-dark-primary-bright mt-1 flex-shrink-0">
+                <div className="text-dark-primary-bright mt-1 shrink-0">
                   {item.icon}
                 </div>
                 <p className="text-lg md:text-xl text-dark-text-secondary leading-relaxed">
@@ -136,7 +136,7 @@ export default function WhatWeDoSection() {
         {/* 3-Step Visual */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
           {/* Connecting Line */}
-          <div className="hidden md:block absolute top-24 left-0 right-0 h-px bg-gradient-to-r from-dark-primary via-dark-primary-bright to-dark-primary opacity-30"></div>
+          <div className="hidden md:block absolute top-24 left-0 right-0 h-px bg-linear-to-r from-dark-primary via-dark-primary-bright to-dark-primary opacity-30"></div>
 
           {steps.map((step, index) => (
             <motion.div

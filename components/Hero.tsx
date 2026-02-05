@@ -28,7 +28,7 @@ export default function Hero() {
       role="banner"
     >
       {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-bg via-dark-bg to-dark-bg-alt"></div>
+      <div className="absolute inset-0 bg-linear-to-b from-dark-bg via-dark-bg to-dark-bg-alt"></div>
 
       {/* Radial Glow Effect */}
       <div className="absolute inset-0 flex items-center justify-center">
@@ -97,7 +97,7 @@ export default function Hero() {
             }}
           >
             <span
-              className="bg-gradient-to-r from-dark-primary-bright to-dark-primary bg-clip-text text-transparent"
+              className="bg-linear-to-r from-dark-primary-bright to-dark-primary bg-clip-text text-transparent"
               style={{
                 filter: "drop-shadow(0 0 30px rgba(86, 179, 138, 0.6))",
               }}

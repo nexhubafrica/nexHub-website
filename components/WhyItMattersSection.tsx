@@ -73,7 +73,7 @@ export default function WhyItMattersSection() {
 
             {/* Divider */}
             <motion.div
-              className="h-px bg-gradient-to-r from-transparent via-dark-primary to-transparent mb-12"
+              className="h-px bg-linear-to-r from-transparent via-dark-primary to-transparent mb-12"
               initial={{ scaleX: 0 }}
               animate={isInView ? { scaleX: 1 } : {}}
               transition={{ duration: 1, delay: 0.6 }}
@@ -109,7 +109,7 @@ export default function WhyItMattersSection() {
             animate={isInView ? { scale: 1, rotate: 45 } : {}}
             transition={{ duration: 1, delay: 1 }}
           >
-            <div className="w-full h-full bg-gradient-to-br from-dark-primary to-transparent rounded-bl-full"></div>
+            <div className="w-full h-full bg-linear-to-br from-dark-primary to-transparent rounded-bl-full"></div>
           </motion.div>
 
           <motion.div
@@ -118,7 +118,7 @@ export default function WhyItMattersSection() {
             animate={isInView ? { scale: 1, rotate: 45 } : {}}
             transition={{ duration: 1, delay: 1 }}
           >
-            <div className="w-full h-full bg-gradient-to-tr from-dark-primary-bright to-transparent rounded-tr-full"></div>
+            <div className="w-full h-full bg-linear-to-tr from-dark-primary-bright to-transparent rounded-tr-full"></div>
           </motion.div>
         </motion.div>
 
