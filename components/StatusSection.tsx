@@ -76,7 +76,7 @@ export default function StatusSection() {
 
           {/* Contact Card */}
           <motion.div
-            className="inline-block bg-dark-card border border-dark-card-alt rounded-3xl p-12 relative overflow-hidden group"
+            className="block w-full max-w-xl mx-auto bg-dark-card border border-dark-card-alt rounded-3xl p-12 relative overflow-hidden group"
             initial={{ opacity: 0, y: 40 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
@@ -91,7 +91,7 @@ export default function StatusSection() {
               </p>
               <motion.a
                 href="mailto:hello@nexhub.africa"
-                className="text-3xl md:text-4xl font-bold text-dark-primary-bright hover:text-dark-primary transition-colors duration-300"
+                className="block text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark-primary-bright hover:text-dark-primary transition-colors duration-300"
                 whileHover={{ scale: 1.05 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
