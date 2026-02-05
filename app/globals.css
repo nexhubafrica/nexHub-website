@@ -1,26 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --primary: #00674f;
+  --dark-bg: #0e1f17;
+  --dark-bg-alt: #0b1a14;
+  --dark-card: #142d23;
+  --dark-card-alt: #18352a;
+  --dark-primary: #4fa37d;
+  --dark-primary-bright: #56b38a;
+  --dark-text: #eaf5ef;
+  --dark-text-secondary: #b7d6c6;
+  --dark-icon: #b7d6c6;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-bg-alt: var(--dark-bg-alt);
+  --color-dark-card: var(--dark-card);
+  --color-dark-card-alt: var(--dark-card-alt);
+  --color-dark-primary: var(--dark-primary);
+  --color-dark-primary-bright: var(--dark-primary-bright);
+  --color-dark-text: var(--dark-text);
+  --color-dark-text-secondary: var(--dark-text-secondary);
+  --color-dark-icon: var(--dark-icon);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+body {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }

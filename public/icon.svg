@@ -1,0 +1,13 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <!-- NexHub Logo Mark: Simplified for app icon -->
+  <!-- Minimalist "N" - only essential diagonal and 4 corner nodes -->
+  
+  <!-- Key diagonal connection (the N stroke) -->
+  <line x1="16" y1="16" x2="48" y2="48" stroke="#00674F" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Essential nodes only (4 corner nodes) -->
+  <circle cx="16" cy="16" r="5" fill="#00674F"/>
+  <circle cx="48" cy="16" r="5" fill="#00674F"/>
+  <circle cx="16" cy="48" r="5" fill="#00674F"/>
+  <circle cx="48" cy="48" r="5" fill="#00674F"/>
+</svg>
