@@ -205,11 +205,11 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Person",
-              name: "Elochukwu Ekwugha", 
+              name: "Elochukwu Ekwugha",
               url: "https://elochukwu-ekwugha.vercel.app/",
               sameAs: [
                 // "https://linkedin.com/in/yourprofile",
-                "https://github.com/ekwugha", 
+                "https://github.com/ekwugha",
                 // Add other social profiles
               ],
               jobTitle: "Founder & Creator",
@@ -232,7 +232,9 @@ export default function RootLayout({
         />
 
         {/* Favicon and App Icons */}
-        <link rel="icon" href="/favicon.png" type="image/png" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.png" type="image/png" sizes="32x32" />
         <link rel="icon" href="/icon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/icon.png" />
         <link rel="manifest" href="/manifest.json" />
