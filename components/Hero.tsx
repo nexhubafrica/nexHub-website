@@ -39,8 +39,8 @@ export default function Hero() {
               "radial-gradient(circle, rgba(79, 163, 125, 0.4) 0%, transparent 70%)",
           }}
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.2, 0.3, 0.2],
+            scale: [1, 1.3, 1],
+            opacity: [0.18, 0.4, 0.18],
           }}
           transition={{
             duration: 8,
@@ -88,7 +88,7 @@ export default function Hero() {
           <motion.span
             className="inline-block"
             animate={{
-              scale: [1, 1.03, 1],
+              scale: [1, 1.08, 1],
             }}
             transition={{
               duration: 4,
@@ -110,8 +110,8 @@ export default function Hero() {
           <motion.div
             className="absolute inset-0 -z-10"
             animate={{
-              opacity: [0.3, 0.6, 0.3],
-              scale: [0.9, 1, 0.9],
+              opacity: [0.35, 0.9, 0.35],
+              scale: [0.9, 1.08, 0.9],
             }}
             transition={{
               duration: 4,
