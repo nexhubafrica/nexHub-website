@@ -9,7 +9,7 @@ const shots = [
     src: "/screenshots/mobile-student-rednote-create.png",
     shotId: "M02",
     alt: "Student jotting what they learnt after school",
-    caption: "Student — everyday learning note after class",
+    caption: "Student — RedNote: explain what you learnt",
     aspect: "phone" as const,
   },
   {
@@ -44,7 +44,7 @@ const shots = [
     src: "/screenshots/admin-verification-link.png",
     shotId: "S06",
     alt: "School issuing a cryptographic share link",
-    caption: "School portal — immutable share link at the finish",
+    caption: "School portal — cryptographic shared record",
     aspect: "landscape" as const,
   },
 ];

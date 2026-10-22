@@ -6,28 +6,28 @@ import { useRef } from "react";
 const steps = [
   {
     n: "01",
-    title: "Students live school on the app",
-    body: "After lessons they capture what stuck — a written note, a clip, an activity. They join class events, show up for programs, and ask for recommendations when a teacher sees promise (including for scholarships). It is everyday school, not a special project.",
+    title: "Students learn out loud — RedNote and beyond",
+    body: "RedNote means Read Every Day: students study a topic, then explain it in their own words — a note, video, voice, or PDF — so peers in their school and across NexHub can learn from them too. They choose visibility (private, school, LGA, or everyone on NexHub). Alongside that: activities like spelling bees and inter-house sports, class events, and recommendations when a teacher sees promise.",
   },
   {
     n: "02",
-    title: "Teachers keep the truth honest",
-    body: "Teachers see the day’s notes, activities, and recommendations in one place. They approve what happened, push back when something is off, run events, and mark who was present — the human layer of trust.",
+    title: "Teachers keep the feed honest",
+    body: "Teachers review RedNotes, activities, and recommendations. They verify what is true and mark verified notes so students — and others reading them — are not drowning in rubbish. They run events, mark who showed up, and post class pulse: announcements, timetables, exams, assignments, polls.",
   },
   {
     n: "03",
-    title: "Parents stay close without chasing",
-    body: "Parents see their child’s trail: learning notes, event participation, activities, recommendations, and attendance. When a teacher or school posts an assignment or event for the student, the parent simply knows — safely inside the app, not scattered across chats.",
+    title: "Parents see everything that matters about their child",
+    body: "Not a chat inbox with teachers. Parents follow their child’s trail end to end — RedNotes, activity participation, event participation, attendance, assignments, and whatever the school or teacher announces. If it reaches the student, the parent can see it too.",
   },
   {
     n: "04",
-    title: "The school seals what becomes official",
-    body: "School admin runs enrollment, classes, and final institutional approvals. What the school stands behind becomes part of the student’s lasting record.",
+    title: "The school runs the institution — and seals the record",
+    body: "School admin onboards the school, approves teachers, manages classes and subjects, sees student trails, handles credentials and credits, keeps audit logs, and issues official shared records with a cryptographic seal — immutable snapshots for scholarships, transfers, university admission, and programs.",
   },
   {
     n: "05",
-    title: "At the end of the road — a link that cannot be tampered with",
-    body: "When it is time to show admissions, scholarships, or programs what this student has done, the school issues a cryptographic verification link. Immutable. Tamper-evident. Not a screenshot someone can edit overnight.",
+    title: "Shared records that cannot be tampered with",
+    body: "When it is time — for a university, a scholarship, an NGO, or the student’s own forever copy — the school issues a shared record: hashed, sealed, timestamped. It does not change when new activity happens. The student grew it from scratch; the seal proves nobody rewrote it overnight.",
   },
 ];
 
@@ -59,10 +59,9 @@ export default function HowItWorksSection() {
             Day by day in school. Forever in the record.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            NexHub is not a checklist you complete once to “get a link.” It is
-            how students, teachers, parents, and the school already move through
-            the year — with proof quietly accumulating until the moment they
-            need to share it.
+            One mobile app — three roles. Plus a school portal for the
+            institution. NexHub is how they already move through the year, with
+            proof quietly accumulating until shared records are needed.
           </p>
         </motion.div>
 

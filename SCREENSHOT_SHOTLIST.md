@@ -5,7 +5,7 @@ Homepage placeholders reference these paths. Until files exist, the site shows l
 
 Aspect tips: phone UI → portrait `9:16` or cropped phone frame; admin UI → landscape `16:9`.
 
-Story framing for captions: everyday school life that quietly builds a lasting record — not a one-shot “complete these steps to get a link” funnel.
+Story framing for captions: everyday school life that quietly builds a lasting shared record — not a one-shot “complete these steps to get a link” funnel. RedNote = Read Every Day. One app, three roles.
 
 ---
 

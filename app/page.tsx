@@ -5,7 +5,7 @@ import Hero from "@/components/Hero";
 import WhatWeDoSection from "@/components/WhatWeDoSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
 import RolesSection from "@/components/RolesSection";
-import ComingNextSection from "@/components/ComingNextSection";
+import AlsoOnNexHubSection from "@/components/AlsoOnNexHubSection";
 import ProductSurfacesSection from "@/components/ProductSurfacesSection";
 import TrustSecuritySection from "@/components/TrustSecuritySection";
 import StatusSection from "@/components/StatusSection";
@@ -20,7 +20,7 @@ export default function Home() {
         <WhatWeDoSection />
         <HowItWorksSection />
         <RolesSection />
-        <ComingNextSection />
+        <AlsoOnNexHubSection />
         <ProductSurfacesSection />
         <TrustSecuritySection />
         <StatusSection />

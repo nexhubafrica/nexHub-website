@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | NexHub",
   },
   description:
-    "NexHub sits inside everyday school life — learning notes, events, activities, and parent updates — so students leave with a cryptographic, immutable learning record schools can stand behind.",
+    "NexHub — where learning becomes trusted. One app for students, teachers, and parents; a school portal for the institution; cryptographic shared records that cannot be tampered with.",
   keywords: [
     "NexHub",
     "Nex Hub",

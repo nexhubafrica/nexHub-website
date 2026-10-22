@@ -6,54 +6,54 @@ import {
   HiBookOpen,
   HiBell,
   HiClipboardList,
-  HiChatAlt2,
   HiCollection,
   HiSparkles,
+  HiChartBar,
 } from "react-icons/hi";
 
-const bonuses = [
-  {
-    icon: HiBookOpen,
-    title: "Assignments & classwork",
-    body: "Teachers post what is due; students see it; parents know without a separate broadcast.",
-  },
+const extras = [
   {
     icon: HiBell,
-    title: "School announcements that reach home",
-    body: "Events, notices, and updates land where families already watch their child’s trail.",
+    title: "Class pulse that reaches home",
+    body: "Announcements, timetables, exam notices, assignments, and polls — students see them, and parents see them too.",
+  },
+  {
+    icon: HiBookOpen,
+    title: "Hub & multi-school learning",
+    body: "RedNotes travel beyond one classroom when students choose — school, LGA, or everyone on NexHub can learn from a clear explanation.",
   },
   {
     icon: HiClipboardList,
-    title: "Richer attendance & class ops",
-    body: "More of the day-to-day school admin work — so NexHub is useful before anyone needs a share link.",
+    title: "Attendance in the same trail",
+    body: "Participation and attendance sit beside activities and events — part of what parents and schools already follow.",
   },
   {
-    icon: HiChatAlt2,
-    title: "Safer school ↔ parent reach",
-    body: "Teachers and schools message through the app about the student — no scraping personal numbers.",
+    icon: HiChartBar,
+    title: "School ops that stay useful every week",
+    body: "Teacher approvals, classes & subjects, credentials & credits, analytics, and audit logs — the portal earns its place before anyone shares a record.",
   },
   {
     icon: HiCollection,
-    title: "More of what schools already run",
-    body: "Clubs, programs, assessments, and institutional workflows — one place that also builds the record.",
+    title: "Activities across the school year",
+    body: "Competitions, sports, leadership, clubs — verified once, ready later when a recommendation or shared record needs proof.",
   },
   {
     icon: HiSparkles,
     title: "The quiet payoff",
-    body: "Life gets easier now. At the end of school, students look back and see: this is everything I did — and it still stands.",
+    body: "Life gets easier now. At the end of school, students look back and see: this is everything I did — and the shared record still stands.",
   },
 ];
 
-export default function ComingNextSection() {
+export default function AlsoOnNexHubSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
     <section
-      id="coming-next"
+      id="also-on-nexhub"
       ref={ref}
       className="relative py-28 px-6 bg-dark-bg"
-      aria-labelledby="coming-heading"
+      aria-labelledby="also-heading"
     >
       <div className="mx-auto max-w-7xl">
         <motion.div
@@ -63,23 +63,23 @@ export default function ComingNextSection() {
           transition={{ duration: 0.7 }}
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
-            Making school easier — and still coming
+            Still more of school life
           </p>
           <h2
-            id="coming-heading"
+            id="also-heading"
             className="text-4xl md:text-5xl font-bold text-dark-text leading-tight"
           >
             Useful every week. Unforgettable at the finish.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            NexHub is built to handle the rest of school life too — tools schools
-            already need — so the product earns its place long before anyone
-            shares a record. These pieces roll out alongside the core trail.
+            Beyond the learning trail, NexHub already carries the rhythm of
+            school — so families and staff get value long before anyone needs a
+            shared record.
           </p>
         </motion.div>
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {bonuses.map((item, i) => {
+          {extras.map((item, i) => {
             const Icon = item.icon;
             return (
               <motion.article

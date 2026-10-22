@@ -15,34 +15,34 @@ const roles = [
   {
     title: "Students",
     icon: HiUserGroup,
-    surface: "Mobile app",
+    surface: "Mobile app · student role",
     points: [
-      "Jot everyday learning — notes, clips, what they learnt after school",
-      "Join class and school events; build participation over time",
-      "Activities and recommendations (including scholarship pushes) land on their trail",
-      "Years later: a cryptographic share link of everything that stood",
+      "RedNote (Read Every Day): read a topic, then explain it in your own words — note, video, voice, or PDF",
+      "Share with classmates and students in other schools on NexHub — or keep it private, school-only, or LGA-wide",
+      "Activities (spelling bee, inter-house sports, leadership) and events land on the same trail",
+      "Grow a shared record from scratch — sealed later so it cannot change",
     ],
   },
   {
     title: "Teachers",
     icon: HiAcademicCap,
-    surface: "Mobile app",
+    surface: "Mobile app · teacher role",
     points: [
-      "Review daily learning notes, activities, and recommendations",
-      "Approve what is true; keep the record honest",
-      "Create events, mark attendance, post what students need to know",
-      "Reach parents safely by posting in-app — not chasing phone numbers",
+      "Verify RedNotes and activities so the network is not filled with rubbish",
+      "Verified mark on notes others can trust when they read and learn",
+      "Run events, mark participation, post class pulse (announcements, timetables, exams, polls)",
+      "Parents see what reaches their child — no personal-number chase required",
     ],
   },
   {
     title: "Parents",
     icon: HiUsers,
-    surface: "Mobile app",
+    surface: "Mobile app · parent role",
     points: [
-      "See the full picture: learning notes, events, participation, activities",
-      "Recommendations that matter — e.g. scholarship records — in one place",
-      "Attendance visibility without calling the school every week",
-      "Know when teachers or school post events or assignments for their child",
+      "One place for everything about their child — not a direct-message thread",
+      "RedNotes, activities, event participation, attendance, assignments",
+      "School and teacher announcements, timetables, exams, and polls that also reach home",
+      "Recommendations that matter (e.g. scholarship) visible on the child’s trail",
     ],
   },
   {
@@ -50,28 +50,28 @@ const roles = [
     icon: HiOfficeBuilding,
     surface: "School portal",
     points: [
-      "Provision students, teachers, classes, and subjects",
-      "Final institutional approvals on what becomes official",
-      "Issue the cryptographic verification link when records are ready to share",
-      "Run the school side of attendance and institutional activity",
+      "Onboard the school, submit documents, manage verification status",
+      "Approve teachers; manage classes, subjects, roles, and managers",
+      "See student trails; run credentials, credits, and cryptographic shared records",
+      "Announcements, analytics, notifications, and immutable activity logs",
     ],
   },
   {
-    title: "Platform (super admin)",
-    icon: HiCog,
-    surface: "Platform console",
-    points: [
-      "Onboard and manage schools across the network",
-      "Finance, coverage, users, and issuance capacity",
-    ],
-  },
-  {
-    title: "Programs & partners",
+    title: "Universities, programs & partners",
     icon: HiGlobeAlt,
     surface: "Shared records",
     points: [
-      "Receive institution-backed, tamper-evident proof — not edit-friendly screenshots",
-      "Trust consistency of learning and participation over time",
+      "Receive institution-backed, tamper-evident shared records — not edit-friendly screenshots",
+      "Scholarships, NGO programs, transfers, and university admission use the same sealed proof",
+      "Students also keep the record as their own history — grown over years, not assembled overnight",
+    ],
+  },
+  {
+    title: "Platform",
+    icon: HiCog,
+    surface: "NexHub ops",
+    points: [
+      "Onboards and supports schools across the network — behind the scenes, not the product story",
     ],
   },
 ];
@@ -101,8 +101,13 @@ export default function RolesSection() {
             id="roles-heading"
             className="text-4xl md:text-5xl font-bold text-dark-text leading-tight"
           >
-            The whole school circle — students, teachers, parents, admin.
+            One app. Three roles. A portal for the school.
           </h2>
+          <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
+            Students, teachers, and parents share the same mobile app — each
+            signs in as their role. Schools run the institution from the admin
+            portal.
+          </p>
         </motion.div>
 
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
@@ -111,7 +116,9 @@ export default function RolesSection() {
             return (
               <motion.article
                 key={role.title}
-                className="rounded-2xl border border-dark-card-alt bg-dark-card p-7"
+                className={`rounded-2xl border border-dark-card-alt bg-dark-card p-7 ${
+                  role.title === "Platform" ? "xl:col-span-1 opacity-90" : ""
+                }`}
                 initial={{ opacity: 0, y: 22 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: 0.05 * i }}

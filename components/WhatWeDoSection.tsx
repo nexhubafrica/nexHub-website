@@ -14,27 +14,27 @@ import {
 const recordItems = [
   {
     icon: HiDocumentText,
-    text: "Everyday learning notes — after school, students capture what they learnt: a quick jot, a voice note, a short video of the lesson landing",
+    text: "RedNote (Read Every Day) — students read a topic, then explain it in their own words (note, video, voice, PDF) so classmates — and students in other schools on NexHub — can learn from them too",
   },
   {
     icon: HiClipboardCheck,
-    text: "Activities & recommendations — clubs, projects, and teacher push for scholarships or programs become part of the same trail",
+    text: "Activities — spelling bees, inter-house sports, leading a club, competitions across the year — teacher-verified and saved for when a recommendation needs real proof",
   },
   {
     icon: HiCalendar,
-    text: "Class & school events — RSVPs, participation, and attendance that parents and teachers can both see",
+    text: "Events & class pulse — RSVPs, participation, timetables, exams, announcements, and polls that reach students and parents together",
   },
   {
     icon: HiAcademicCap,
-    text: "Human verification — teachers review what is true; the school seals institutional authority",
+    text: "Teacher verification — educators mark what is true so the feed is not filled with rubbish; verified RedNotes carry that mark for others to trust",
   },
   {
     icon: HiUsers,
-    text: "Parents in the loop — progress, events, assignments posted to the student, and attendance — without chasing WhatsApp chains",
+    text: "Parents see the whole child trail — learning notes, activities, event participation, attendance, assignments, and school announcements — without chasing chats",
   },
   {
     icon: HiShieldCheck,
-    text: "A cryptographic share link at the end of the road — immutable and tamper-evident, so the record cannot be quietly rewritten",
+    text: "Shared records at the finish — cryptographic, immutable, tamper-evident proof for scholarships, universities, programs — or simply the student’s own history they grew from scratch",
   },
 ];
 
@@ -52,13 +52,12 @@ export default function WhatWeDoSection() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-dark-text leading-tight">
-            Not a one-off task. Just school — remembered.
+            Learning that becomes trusted — day by day.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            NexHub sits inside ordinary school days. Students keep showing up:
-            notes after lessons, events, activities, recommendations. Teachers
-            and the school keep the bar honest. Years later, that trail is still
-            theirs — sealed so it cannot be changed or faked.
+            NexHub is not a form you fill once. It is how students learn out loud,
+            how teachers keep the bar honest, how parents stay close, and how
+            schools stand behind a record that cannot be quietly rewritten.
           </p>
         </motion.div>
 
@@ -90,9 +89,10 @@ export default function WhatWeDoSection() {
             })}
           </ul>
           <p className="mt-8 text-sm text-dark-text-secondary/90 leading-relaxed border-t border-dark-card-alt pt-6">
-            Private by default. Shared only when the student and school choose.
-            Verification is educator review and school authority — never a
-            scorebot rewriting history.
+            RedNotes can be private, school-only, LGA-wide, or open to everyone
+            on NexHub. Shared records stay private until the school and student
+            choose to issue them — sealed cryptographically so they cannot be
+            edited after the fact.
           </p>
         </motion.div>
       </div>

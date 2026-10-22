@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import NexHubLogo from "./NexHubLogo";
 
 export default function Hero() {
   return (
@@ -20,14 +21,22 @@ export default function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-        <motion.p
-          className="mb-6 text-sm font-semibold uppercase tracking-[0.22em] text-dark-primary-bright"
+        <motion.div
+          className="mb-8 flex items-center gap-3 text-dark-primary-bright"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          NexHub
-        </motion.p>
+          <NexHubLogo className="h-12 w-12 sm:h-14 sm:w-14" />
+          <div>
+            <p className="text-2xl sm:text-3xl font-bold tracking-tight text-dark-text">
+              NexHub
+            </p>
+            <p className="text-sm sm:text-base font-semibold italic text-dark-primary-bright">
+              Where learning becomes trusted
+            </p>
+          </div>
+        </motion.div>
 
         <motion.h1
           className="max-w-4xl text-4xl sm:text-5xl md:text-6xl font-bold text-dark-text leading-[1.1] tracking-tight"
@@ -44,10 +53,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          After class, students jot what they learnt — a note, a short video, an
-          activity. Teachers and schools quietly confirm what is true. Parents
-          stay in the loop. Over the years it becomes a cryptographic, immutable
-          learning record they can share when it matters.
+          One app for students, teachers, and parents. Everyday learning —
+          RedNotes, activities, events, class pulse — quietly becomes a
+          cryptographic, immutable shared record when it matters: scholarships,
+          admissions, or simply their own history.
         </motion.p>
 
         <motion.div

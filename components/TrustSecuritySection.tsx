@@ -18,9 +18,9 @@ export default function TrustSecuritySection() {
   const features = [
     {
       icon: HiLockClosed,
-      title: "Cryptographic share links",
+      title: "Cryptographic shared records",
       description:
-        "When records are shared, the link is cryptographic — immutable and tamper-evident, not an editable file",
+        "Issued shared records are hashed, sealed, and immutable — tamper-evident, not an editable file or screenshot",
     },
     {
       icon: HiEyeOff,

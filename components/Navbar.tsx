@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import NexHubLogo from "./NexHubLogo";
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -12,9 +13,12 @@ export default function Navbar() {
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link
           href="/"
-          className="text-lg font-bold tracking-tight text-dark-primary-bright"
+          className="flex items-center gap-2.5 text-dark-primary-bright hover:opacity-90 transition-opacity"
         >
-          NexHub
+          <NexHubLogo className="h-8 w-8" />
+          <span className="text-lg font-bold tracking-tight text-dark-text">
+            NexHub
+          </span>
         </Link>
         <nav className="flex items-center gap-2 sm:gap-3">
           {onHome ? (

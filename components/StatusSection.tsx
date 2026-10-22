@@ -42,9 +42,9 @@ export default function StatusSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
         >
-          Partners get student, teacher, and parent mobile apps plus the school
-          portal — so daily school life is easier now, and every student’s trail
-          can become an immutable record when it is time to share.
+          Partners get one mobile app for students, teachers, and parents — plus
+          the school portal — so daily school life is easier now, and every
+          student’s trail can become an immutable shared record when it is time.
         </motion.p>
 
         <motion.a
