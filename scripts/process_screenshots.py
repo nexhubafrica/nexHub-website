@@ -173,7 +173,7 @@ JOBS = [
         "src": "IMG_5969-609bc3ed-2c85-40f9-ba91-313336d9dadf.png",
         "dest": "mobile-student-events.png",
         "blur": [
-            (100, 625, 380, 655),  # Organized by Michelle Anu
+            (100, 625, 380, 658),  # Organized by Michelle Anu
         ],
         "forced_blobs": [{"cx": 54, "cy": 300, "r": 58, "area": 0}],
     },
@@ -181,7 +181,7 @@ JOBS = [
         "src": "IMG_5967-35beed53-986e-4f3e-b435-3558dfc8298a.png",
         "dest": "mobile-profile-learning.png",
         "blur": [
-            (55, 268, 340, 298),  # Mr. Adebayo Johnson · 45 students
+            (50, 320, 360, 345),  # Mr. Adebayo Johnson · 45 students
         ],
         "forced_blobs": [{"cx": 418, "cy": 84, "r": 50, "area": 0}],
     },
