@@ -8,44 +8,44 @@ const shots = [
   {
     src: "/screenshots/mobile-student-home.png",
     shotId: "M01",
-    alt: "Student home with Write RedNote and class shortcuts",
-    caption: "Student — home: class, RedNotes, and daily focus",
+    alt: "Student app home",
+    caption: "Student app — everyday home",
     aspect: "phone" as const,
   },
   {
     src: "/screenshots/mobile-student-rednote-create.png",
     shotId: "M02",
-    alt: "Student creating a RedNote and choosing content type",
-    caption: "Student — RedNote: explain what you learnt",
-    aspect: "phone" as const,
-  },
-  {
-    src: "/screenshots/mobile-student-rednote-detail.png",
-    shotId: "M03",
-    alt: "RedNotes feed showing a Computer Studies note",
-    caption: "Student — RedNotes feed across school & LGA",
+    alt: "Creating a RedNote",
+    caption: "Student app — RedNote",
     aspect: "phone" as const,
   },
   {
     src: "/screenshots/mobile-student-events.png",
     shotId: "M06",
-    alt: "Student events list with countdown chips",
-    caption: "Student — events & participation",
+    alt: "Student events",
+    caption: "Student app — events",
     aspect: "phone" as const,
   },
   {
     src: "/screenshots/mobile-profile-learning.png",
     shotId: "M10",
-    alt: "Academic Hub with class boards and NexHub records",
-    caption: "Student — Hub: class pulse & NexHub records",
+    alt: "Academic Hub",
+    caption: "Student app — Hub & records",
     aspect: "phone" as const,
   },
   {
-    src: "/screenshots/mobile-student-class-board.png",
-    shotId: "M08b",
-    alt: "Class board with announcement and timetable",
-    caption: "Student — class board: announcements & timetable",
-    aspect: "phone" as const,
+    src: "/screenshots/admin-students-list.png",
+    shotId: "S01",
+    alt: "School portal students",
+    caption: "School portal — students",
+    aspect: "landscape" as const,
+  },
+  {
+    src: "/screenshots/admin-nexhub-records.png",
+    shotId: "S06",
+    alt: "School portal NexHub Records",
+    caption: "School portal — NexHub Records",
+    aspect: "landscape" as const,
   },
 ];
 
@@ -77,11 +77,8 @@ export default function ProductSurfacesSection() {
             Where school life actually happens.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            Live captures from the student role. Teacher, parent, and school
-            portal shots drop in next using the same{" "}
-            <code className="text-dark-primary-bright">public/screenshots/</code>{" "}
-            names in{" "}
-            <code className="text-dark-primary-bright">SCREENSHOT_SHOTLIST.md</code>.
+            Glimpses of the mobile app and school portal — enough to feel the
+            product, not a full walkthrough.
           </p>
         </motion.div>
 
@@ -92,6 +89,9 @@ export default function ProductSurfacesSection() {
               initial={{ opacity: 0, y: 22 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.06 * i }}
+              className={
+                shot.aspect === "landscape" ? "sm:col-span-2 lg:col-span-1" : ""
+              }
             >
               <ScreenshotFrame {...shot} />
             </motion.div>
