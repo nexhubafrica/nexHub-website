@@ -32,7 +32,7 @@ export default function LoadingScreen() {
             exit={{ opacity: 0 }}
           >
             <motion.div
-              className="w-[600px] h-[600px] rounded-full"
+              className="w-150 h-150 rounded-full"
               style={{
                 background:
                   "radial-gradient(circle, rgba(79, 163, 125, 0.6) 0%, transparent 70%)",
