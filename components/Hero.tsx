@@ -1,178 +1,84 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
-import { HiChevronDown } from "react-icons/hi";
+import NexHubLogo from "./NexHubLogo";
 
 export default function Hero() {
-  const [particles, setParticles] = useState<
-    Array<{ id: number; x: number; y: number; delay: number; duration: number }>
-  >([]);
-
-  useEffect(() => {
-    // Generate particles for background animation
-    const particleArray = Array.from({ length: 30 }, (_, i) => ({
-      id: i,
-      x: Math.random() * 100,
-      y: Math.random() * 100,
-      delay: Math.random() * 2,
-      duration: 3 + Math.random() * 4,
-    }));
-    setParticles(particleArray);
-  }, []);
-
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
-      aria-label="Hero section"
-      role="banner"
+      className="relative min-h-[100svh] flex items-center overflow-hidden pt-20 pb-16"
+      aria-label="Hero"
     >
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-linear-to-b from-dark-bg via-dark-bg to-dark-bg-alt"></div>
-
-      {/* Radial Glow Effect */}
-      <div className="absolute inset-0 flex items-center justify-center">
-        <motion.div
-          className="w-[800px] h-[800px] rounded-full opacity-20"
+      <div className="absolute inset-0 bg-linear-to-b from-dark-bg via-dark-bg to-dark-bg-alt" />
+      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div
+          className="w-[min(90vw,720px)] h-[min(90vw,720px)] rounded-full opacity-25"
           style={{
             background:
-              "radial-gradient(circle, rgba(79, 163, 125, 0.4) 0%, transparent 70%)",
-          }}
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.18, 0.4, 0.18],
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
+              "radial-gradient(circle, rgba(79, 163, 125, 0.45) 0%, transparent 70%)",
           }}
         />
       </div>
 
-      {/* Animated Particles */}
-      {particles.map((particle) => (
+      <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
         <motion.div
-          key={particle.id}
-          className="absolute w-1 h-1 bg-dark-primary-bright rounded-full"
-          style={{
-            left: `${particle.x}%`,
-            top: `${particle.y}%`,
-          }}
-          animate={{
-            opacity: [0, 0.8, 0],
-            scale: [0, 1, 0],
-          }}
-          transition={{
-            duration: particle.duration,
-            repeat: Infinity,
-            delay: particle.delay,
-            ease: "easeInOut",
-          }}
-        />
-      ))}
-
-      {/* Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
-        {/* Main Heading with Breathing Animation */}
-        <motion.h1
-          className="text-7xl md:text-9xl font-bold mb-8 relative"
-          style={{
-            textShadow:
-              "0 0 80px rgba(79, 163, 125, 0.5), 0 20px 40px rgba(0, 0, 0, 0.4)",
-          }}
-          initial={{ opacity: 0, y: 30 }}
+          className="mb-8 flex items-center gap-3 text-dark-primary-bright"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1 }}
+          transition={{ duration: 0.6 }}
         >
-          <motion.span
-            className="inline-block"
-            animate={{
-              scale: [1, 1.08, 1],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <span
-              className="bg-linear-to-r from-dark-primary-bright to-dark-primary bg-clip-text text-transparent"
-              style={{
-                filter: "drop-shadow(0 0 30px rgba(86, 179, 138, 0.6))",
-              }}
-            >
+          <NexHubLogo className="h-12 w-12 sm:h-14 sm:w-14" />
+          <div>
+            <p className="text-2xl sm:text-3xl font-bold tracking-tight text-dark-text">
               NexHub
-            </span>
-          </motion.span>
+            </p>
+            <p className="text-sm sm:text-base font-semibold italic text-dark-primary-bright">
+              Where learning becomes trusted
+            </p>
+          </div>
+        </motion.div>
 
-          {/* Floating Shadow */}
-          <motion.div
-            className="absolute inset-0 -z-10"
-            animate={{
-              opacity: [0.35, 0.9, 0.35],
-              scale: [0.9, 1.08, 0.9],
-            }}
-            transition={{
-              duration: 4,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-            style={{
-              filter: "blur(40px)",
-              background:
-                "radial-gradient(circle, rgba(79, 163, 125, 0.6) 0%, transparent 70%)",
-            }}
-          />
+        <motion.h1
+          className="max-w-4xl text-4xl sm:text-5xl md:text-6xl font-bold text-dark-text leading-[1.1] tracking-tight"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.05 }}
+        >
+          School life, saved as it happens — so the record stands forever.
         </motion.h1>
 
-        {/* Subtitle */}
         <motion.p
-          className="text-2xl md:text-4xl text-dark-text mb-6 font-medium"
-          initial={{ opacity: 0, y: 20 }}
+          className="mt-6 max-w-2xl text-lg md:text-xl text-dark-text-secondary leading-relaxed"
+          initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
+          transition={{ duration: 0.7, delay: 0.15 }}
         >
-          Education verification infrastructure.
+          One app for students, teachers, and parents. Not just exam results —
+          the growth of a student through school. Everyday learning, activities,
+          and participation quietly become a cryptographic NexHub Record when it
+          matters: scholarships, admissions, or their own history.
         </motion.p>
 
-        {/* Supporting Text */}
-        <motion.p
-          className="text-lg md:text-sm italic text-dark-text-secondary max-w2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.5 }}
-        >
-          Trusted learning records for schools, students, and institutions.
-        </motion.p>
-      </div>
-
-      {/* Scroll Indicator */}
-      <motion.div
-        className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-        animate={{
-          y: [0, 10, 0],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-      >
         <motion.div
-          className="text-dark-primary-bright"
-          animate={{
-            opacity: [0.5, 1, 0.5],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
+          className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, delay: 0.25 }}
         >
-          <HiChevronDown className="w-8 h-8" />
+          <a
+            href="mailto:hello@nexhub.africa?subject=School%20access%20request"
+            className="inline-flex items-center justify-center rounded-full bg-dark-primary px-7 py-3.5 text-base font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
+          >
+            Request school access
+          </a>
+          <a
+            href="#how-it-works"
+            className="inline-flex items-center justify-center px-3 py-3.5 text-base font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors"
+          >
+            See how school life flows
+          </a>
         </motion.div>
-      </motion.div>
+      </div>
     </section>
   );
 }

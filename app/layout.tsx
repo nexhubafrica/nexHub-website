@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexhub.africa"),
   title: {
-    default: "NexHub - Education Verification Infrastructure for Schools",
-    template: "%s | NexHub - School Education Infrastructure",
+    default: "NexHub — School life that becomes a lasting record",
+    template: "%s | NexHub",
   },
   description:
-    "NexHub is a trusted education verification infrastructure for schools. Build verified learning records, verify student activity, and establish institutional trust. Digital backbone for secondary schools, universities, NGOs, and education programs built to scale across Africa.",
+    "NexHub — where learning becomes trusted. One app for students, teachers, and parents; a school portal for the institution; cryptographic NexHub Records that capture student growth — not just exam results.",
   keywords: [
     "NexHub",
     "Nex Hub",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nexhub.africa",
     siteName: "NexHub",
-    title: "NexHub - Education Verification Infrastructure for Schools",
+    title: "NexHub — School life that becomes a lasting record",
     description:
-      "Trusted education infrastructure for schools built to scale across Africa. Build verified learning records, verify student activity, and establish institutional trust.",
+      "Everyday school life for students, teachers, and parents — with a cryptographic, tamper-evident learning record at the end of the road.",
     images: [
       {
         url: "/og-image.png",
@@ -163,12 +163,7 @@ export default function RootLayout({
               name: "NexHub",
               url: "https://nexhub.africa",
               description:
-                "Africa's education verification infrastructure for schools",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://nexhub.africa/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
+                "Verified learning records for secondary schools across Africa",
             }),
           }}
         />
@@ -182,52 +177,9 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               name: "NexHub",
               applicationCategory: "EducationalApplication",
-              operatingSystem: "Web",
+              operatingSystem: "iOS, Android, Web",
               description:
-                "Education verification infrastructure for schools across Africa",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                ratingCount: "100",
-              },
-            }),
-          }}
-        />
-
-        <Script
-          id="founder-structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Elochukwu Ekwugha",
-              url: "https://elochukwu-ekwugha.vercel.app/",
-              sameAs: [
-                // "https://linkedin.com/in/yourprofile",
-                "https://github.com/ekwugha",
-                // Add other social profiles
-              ],
-              jobTitle: "Founder & Creator",
-              // worksFor: {
-              //   "@type": "Organization",
-              //   name: "NexHub",
-              //   url: "https://nexhub.africa",
-              // },
-              description:
-                "Founder and creator of NexHub, Africa's education verification infrastructure for schools.",
-              alumniOf: [], // Add your alma mater if relevant
-              knowsAbout: [
-                "Education Technology",
-                "School Infrastructure",
-                "Verification Systems",
-                "African Education",
-              ],
+                "Mobile apps and school portals for verified learning records — RedNotes, events, teacher review, and school-issued verification links.",
             }),
           }}
         />

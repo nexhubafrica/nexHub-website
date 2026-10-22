@@ -23,6 +23,14 @@
 # misc
 .DS_Store
 *.pem
+.venv-img/
+
+# Internal notes (keep README.md tracked)
+SCREENSHOT_SHOTLIST.md
+SEO-GUIDE.md
+IMPLEMENTATION-SUMMARY.md
+UPDATES.md
+scripts/process_screenshots.py
 
 # debug
 npm-debug.log*

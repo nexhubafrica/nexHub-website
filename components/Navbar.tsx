@@ -1,0 +1,57 @@
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+import NexHubLogo from "./NexHubLogo";
+
+export default function Navbar() {
+  const pathname = usePathname();
+  const onHome = pathname === "/";
+
+  return (
+    <header className="fixed top-0 inset-x-0 z-40 border-b border-dark-card-alt/80 bg-dark-bg/85 backdrop-blur-md">
+      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
+        <Link
+          href="/"
+          className="flex items-center gap-2.5 text-dark-primary-bright hover:opacity-90 transition-opacity"
+        >
+          <NexHubLogo className="h-8 w-8" />
+          <span className="text-lg font-bold tracking-tight text-dark-text">
+            NexHub
+          </span>
+        </Link>
+        <nav className="flex items-center gap-2 sm:gap-3">
+          {onHome ? (
+            <>
+              <a
+                href="#how-it-works"
+                className="hidden sm:inline text-sm font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors px-2"
+              >
+                How it works
+              </a>
+              <a
+                href="#product"
+                className="hidden md:inline text-sm font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors px-2"
+              >
+                Product
+              </a>
+              <a
+                href="#access"
+                className="rounded-full bg-dark-primary px-4 py-2 text-sm font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
+              >
+                Request access
+              </a>
+            </>
+          ) : (
+            <Link
+              href="/#access"
+              className="rounded-full bg-dark-primary px-4 py-2 text-sm font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
+            >
+              Request access
+            </Link>
+          )}
+        </nav>
+      </div>
+    </header>
+  );
+}
