@@ -35,24 +35,24 @@ export default function ScreenshotFrame({
               src={src}
               alt={alt}
               fill
-              className="object-cover object-top scale-[1.08] blur-[10px] brightness-[0.92] saturate-[0.95] transition-transform duration-700 group-hover:scale-[1.12] group-hover:blur-[7px]"
+              className="object-cover object-top scale-[1.04] blur-[3.5px] brightness-[0.97] saturate-[1] transition-transform duration-700 group-hover:scale-[1.06] group-hover:blur-[2.5px]"
               sizes={isPhone ? "280px" : "600px"}
               onError={() => setFailed(true)}
             />
-            {/* Frost veil — keeps content hinted, not legible */}
+            {/* Light frost — soft hint, still mostly readable as product */}
             <div
-              className="pointer-events-none absolute inset-0 bg-dark-bg/35"
+              className="pointer-events-none absolute inset-0 bg-dark-bg/12"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute inset-0 bg-linear-to-t from-dark-bg/70 via-transparent to-dark-bg/25"
+              className="pointer-events-none absolute inset-0 bg-linear-to-t from-dark-bg/35 via-transparent to-dark-bg/10"
               aria-hidden
             />
             <div
-              className="pointer-events-none absolute inset-0 opacity-40"
+              className="pointer-events-none absolute inset-0 opacity-20"
               style={{
                 background:
-                  "radial-gradient(ellipse at 50% 30%, transparent 20%, rgba(15,23,20,0.55) 100%)",
+                  "radial-gradient(ellipse at 50% 30%, transparent 35%, rgba(15,23,20,0.35) 100%)",
               }}
               aria-hidden
             />
