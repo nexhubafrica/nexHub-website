@@ -53,10 +53,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          One app for students, teachers, and parents. Everyday learning —
-          RedNotes, activities, events, class pulse — quietly becomes a
-          cryptographic, immutable shared record when it matters: scholarships,
-          admissions, or simply their own history.
+          One app for students, teachers, and parents. Not just exam results —
+          the growth of a student through school. Everyday learning, activities,
+          and participation quietly become a cryptographic NexHub Record when it
+          matters: scholarships, admissions, or their own history.
         </motion.p>
 
         <motion.div

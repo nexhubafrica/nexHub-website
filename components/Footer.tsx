@@ -15,8 +15,8 @@ export default function Footer() {
             Where learning becomes trusted
           </p>
           <p className="text-dark-text-secondary max-w-md leading-relaxed">
-            School life, saved as it happens — so students leave with a shared
-            record that stands forever.
+            School life, saved as it happens — growth through school, not just
+            exam results, sealed as a NexHub Record that stands forever.
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-dark-text-secondary">

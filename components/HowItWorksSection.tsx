@@ -21,13 +21,13 @@ const steps = [
   },
   {
     n: "04",
-    title: "The school runs the institution — and seals the record",
-    body: "School admin onboards the school, approves teachers, manages classes and subjects, sees student trails, handles credentials and credits, keeps audit logs, and issues official shared records with a cryptographic seal — immutable snapshots for scholarships, transfers, university admission, and programs.",
+    title: "The school manages at institutional level — and seals the record",
+    body: "School admins run the portal: approve teachers, manage students, classes and subjects, see growth trails, keep audit logs, and issue NexHub Records — cryptographic, immutable snapshots for scholarships, transfers, university admission, and programs. (Schools join the network through NexHub platform ops — admins manage their school once they are on it.)",
   },
   {
     n: "05",
-    title: "Shared records that cannot be tampered with",
-    body: "When it is time — for a university, a scholarship, an NGO, or the student’s own forever copy — the school issues a shared record: hashed, sealed, timestamped. It does not change when new activity happens. The student grew it from scratch; the seal proves nobody rewrote it overnight.",
+    title: "NexHub Records that cannot be tampered with",
+    body: "When it is time — for a university, a scholarship, an NGO, or the student’s own forever copy — the school issues a NexHub Record: hashed, sealed, timestamped. It does not change when new activity happens. The student grew it from scratch; the seal proves nobody rewrote it overnight.",
   },
 ];
 
@@ -61,7 +61,7 @@ export default function HowItWorksSection() {
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
             One mobile app — three roles. Plus a school portal for the
             institution. NexHub is how they already move through the year, with
-            proof quietly accumulating until shared records are needed.
+            proof quietly accumulating until a NexHub Record is needed.
           </p>
         </motion.div>
 

@@ -20,7 +20,7 @@ const roles = [
       "RedNote (Read Every Day): read a topic, then explain it in your own words — note, video, voice, or PDF",
       "Share with classmates and students in other schools on NexHub — or keep it private, school-only, or LGA-wide",
       "Activities (spelling bee, inter-house sports, leadership) and events land on the same trail",
-      "Grow a shared record from scratch — sealed later so it cannot change",
+      "Grow a NexHub Record from scratch — sealed later so it cannot change",
     ],
   },
   {
@@ -50,18 +50,18 @@ const roles = [
     icon: HiOfficeBuilding,
     surface: "School portal",
     points: [
-      "Onboard the school, submit documents, manage verification status",
-      "Approve teachers; manage classes, subjects, roles, and managers",
-      "See student trails; run credentials, credits, and cryptographic shared records",
+      "Run the school at institutional level — teachers, students, classes, subjects, roles",
+      "See student growth trails across RedNotes, activities, events, and attendance",
+      "Issue NexHub Records — sealed, cryptographic snapshots the school stands behind",
       "Announcements, analytics, notifications, and immutable activity logs",
     ],
   },
   {
     title: "Universities, programs & partners",
     icon: HiGlobeAlt,
-    surface: "Shared records",
+    surface: "NexHub Records",
     points: [
-      "Receive institution-backed, tamper-evident shared records — not edit-friendly screenshots",
+      "Receive institution-backed, tamper-evident NexHub Records — not edit-friendly screenshots",
       "Scholarships, NGO programs, transfers, and university admission use the same sealed proof",
       "Students also keep the record as their own history — grown over years, not assembled overnight",
     ],
@@ -71,7 +71,7 @@ const roles = [
     icon: HiCog,
     surface: "NexHub ops",
     points: [
-      "Onboards and supports schools across the network — behind the scenes, not the product story",
+      "Onboards schools onto the network and supports them behind the scenes",
     ],
   },
 ];

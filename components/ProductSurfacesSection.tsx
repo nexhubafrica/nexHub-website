@@ -44,7 +44,7 @@ const shots = [
     src: "/screenshots/admin-verification-link.png",
     shotId: "S06",
     alt: "School issuing a cryptographic share link",
-    caption: "School portal — cryptographic shared record",
+    caption: "School portal — issue a NexHub Record",
     aspect: "landscape" as const,
   },
 ];

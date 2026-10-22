@@ -18,9 +18,9 @@ export default function TrustSecuritySection() {
   const features = [
     {
       icon: HiLockClosed,
-      title: "Cryptographic shared records",
+      title: "Cryptographic NexHub Records",
       description:
-        "Issued shared records are hashed, sealed, and immutable — tamper-evident, not an editable file or screenshot",
+        "Issued NexHub Records are hashed, sealed, and immutable — tamper-evident, not an editable file or screenshot",
     },
     {
       icon: HiEyeOff,
@@ -145,7 +145,7 @@ export default function TrustSecuritySection() {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            Built so everyday school life can become a record that cannot be quietly rewritten.
+            Built so a student’s growth through school can become a NexHub Record that cannot be quietly rewritten.
           </motion.p>
         </motion.div>
       </div>

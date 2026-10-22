@@ -34,7 +34,7 @@ const recordItems = [
   },
   {
     icon: HiShieldCheck,
-    text: "Shared records at the finish — cryptographic, immutable, tamper-evident proof for scholarships, universities, programs — or simply the student’s own history they grew from scratch",
+    text: "NexHub Records at the finish — cryptographic, immutable, tamper-evident proof for scholarships, universities, programs — or simply the student’s own history they grew from scratch",
   },
 ];
 
@@ -55,9 +55,10 @@ export default function WhatWeDoSection() {
             Learning that becomes trusted — day by day.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            NexHub is not a form you fill once. It is how students learn out loud,
-            how teachers keep the bar honest, how parents stay close, and how
-            schools stand behind a record that cannot be quietly rewritten.
+            This is not a digital report card. Exam scores alone do not tell the
+            story. NexHub captures how a student grows through school — how they
+            learn out loud, participate, lead, and show up — so teachers, parents,
+            and institutions can trust the full picture.
           </p>
         </motion.div>
 
@@ -69,9 +70,7 @@ export default function WhatWeDoSection() {
         >
           <h3 className="text-2xl font-bold text-dark-text mb-8">
             What accumulates into a{" "}
-            <span className="text-dark-primary-bright">
-              lasting learning record
-            </span>
+            <span className="text-dark-primary-bright">NexHub Record</span>
           </h3>
           <ul className="space-y-5">
             {recordItems.map((item) => {
@@ -90,9 +89,8 @@ export default function WhatWeDoSection() {
           </ul>
           <p className="mt-8 text-sm text-dark-text-secondary/90 leading-relaxed border-t border-dark-card-alt pt-6">
             RedNotes can be private, school-only, LGA-wide, or open to everyone
-            on NexHub. Shared records stay private until the school and student
-            choose to issue them — sealed cryptographically so they cannot be
-            edited after the fact.
+            on NexHub. NexHub Records stay private until the school issues them —
+            sealed cryptographically so they cannot be edited after the fact.
           </p>
         </motion.div>
       </div>

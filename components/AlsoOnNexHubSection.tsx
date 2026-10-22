@@ -30,17 +30,17 @@ const extras = [
   {
     icon: HiChartBar,
     title: "School ops that stay useful every week",
-    body: "Teacher approvals, classes & subjects, credentials & credits, analytics, and audit logs — the portal earns its place before anyone shares a record.",
+    body: "Teacher approvals, classes & subjects, NexHub Records, analytics, and audit logs — the portal earns its place before anyone needs a sealed record.",
   },
   {
     icon: HiCollection,
     title: "Activities across the school year",
-    body: "Competitions, sports, leadership, clubs — verified once, ready later when a recommendation or shared record needs proof.",
+    body: "Competitions, sports, leadership, clubs — verified once, ready later when a recommendation or NexHub Record needs proof.",
   },
   {
     icon: HiSparkles,
     title: "The quiet payoff",
-    body: "Life gets easier now. At the end of school, students look back and see: this is everything I did — and the shared record still stands.",
+    body: "Life gets easier now. At the end of school, students look back and see: this is everything I did — and the NexHub Record still stands.",
   },
 ];
 
@@ -74,7 +74,7 @@ export default function AlsoOnNexHubSection() {
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
             Beyond the learning trail, NexHub already carries the rhythm of
             school — so families and staff get value long before anyone needs a
-            shared record.
+            NexHub Record.
           </p>
         </motion.div>
 

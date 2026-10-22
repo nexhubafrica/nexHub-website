@@ -44,7 +44,8 @@ export default function StatusSection() {
         >
           Partners get one mobile app for students, teachers, and parents — plus
           the school portal — so daily school life is easier now, and every
-          student’s trail can become an immutable shared record when it is time.
+          student’s growth trail can become an immutable NexHub Record when it
+          is time.
         </motion.p>
 
         <motion.a
