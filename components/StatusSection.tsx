@@ -1,109 +1,61 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 export default function StatusSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-80px" });
 
   return (
-    <section ref={ref} className="relative py-32 px-6 bg-dark-bg-alt">
-      <div className="max-w-5xl mx-auto">
+    <section
+      id="access"
+      ref={ref}
+      className="relative py-28 px-6 bg-dark-bg"
+      aria-labelledby="access-heading"
+    >
+      <div className="mx-auto max-w-3xl text-center">
         <motion.div
-          className="text-center"
-          initial={{ opacity: 0, y: 40 }}
+          className="mb-8 inline-flex items-center gap-2 rounded-full border border-dark-primary/40 bg-dark-card px-5 py-2.5"
+          initial={{ opacity: 0, y: 12 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
         >
-          {/* Status Indicator */}
-          <motion.div
-            className="inline-flex items-center gap-3 bg-dark-card border border-dark-primary/40 rounded-full px-6 py-3 mb-12"
-            animate={{
-              borderColor: [
-                "rgba(79, 163, 125, 0.4)",
-                "rgba(86, 179, 138, 0.6)",
-                "rgba(79, 163, 125, 0.4)",
-              ],
-            }}
-            transition={{
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          >
-            <motion.div
-              className="w-3 h-3 bg-dark-primary-bright rounded-full"
-              animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.8, 1, 0.8],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            <span className="text-dark-text-secondary font-medium text-lg">
-              Active Development
-            </span>
-          </motion.div>
-
-          {/* Heading */}
-          <motion.h2
-            className="text-5xl md:text-6xl font-bold text-dark-text mb-8"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <span className="text-dark-primary-bright">Private rollout</span>{" "}
-            underway
-          </motion.h2>
-
-          {/* Body Text */}
-          <motion.div
-            className="max-w-3xl mx-auto mb-16"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4 }}
-          >
-            <p className="text-xl md:text-2xl text-dark-text-secondary leading-relaxed mb-8">
-              NexHub is currently being introduced through selected schools and
-              partners to ensure stability, trust, and long-term adoption.
-            </p>
-          </motion.div>
-
-          {/* Contact Card */}
-          <motion.div
-            className="block w-full max-w-xl mx-auto bg-dark-card border border-dark-card-alt rounded-3xl p-12 relative overflow-hidden group"
-            initial={{ opacity: 0, y: 40 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            whileHover={{ scale: 1.02 }}
-          >
-            {/* Glow Effect */}
-            <div className="absolute inset-0 bg-linear-to-br from-dark-primary/20 via-transparent to-dark-primary-bright/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-            <div className="relative z-10">
-              <p className="text-dark-text-secondary text-lg mb-4">
-                Get in touch
-              </p>
-              <motion.a
-                href="mailto:hello@nexhub.africa"
-                className="block text-center text-2xl sm:text-3xl md:text-4xl font-bold text-dark-primary-bright hover:text-dark-primary transition-colors duration-300"
-                whileHover={{ scale: 1.05 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                hello@nexhub.africa
-              </motion.a>
-            </div>
-
-            {/* Decorative Corner Elements */}
-            <div className="absolute top-0 left-0 w-20 h-20 border-t-2 border-l-2 border-dark-primary/30 rounded-tl-2xl"></div>
-            <div className="absolute bottom-0 right-0 w-20 h-20 border-b-2 border-r-2 border-dark-primary/30 rounded-br-2xl"></div>
-          </motion.div>
+          <span className="h-2.5 w-2.5 rounded-full bg-dark-primary-bright" />
+          <span className="text-sm font-medium text-dark-text-secondary">
+            Pilot with selected schools
+          </span>
         </motion.div>
+
+        <motion.h2
+          id="access-heading"
+          className="text-4xl md:text-5xl font-bold text-dark-text mb-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.05 }}
+        >
+          Request access for your school
+        </motion.h2>
+
+        <motion.p
+          className="text-lg md:text-xl text-dark-text-secondary leading-relaxed mb-10"
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.1 }}
+        >
+          Partners get the student & teacher mobile apps, school admin portal,
+          and the path from classroom activity to school-issued verification
+          links. We onboard carefully so trust stays intact.
+        </motion.p>
+
+        <motion.a
+          href="mailto:hello@nexhub.africa?subject=School%20access%20request&body=School%20name%3A%0ARole%3A%0AEmail%3A%0A"
+          className="inline-flex items-center justify-center rounded-full bg-dark-primary px-8 py-4 text-base font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
+          initial={{ opacity: 0, y: 16 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ delay: 0.15 }}
+        >
+          Email hello@nexhub.africa
+        </motion.a>
       </div>
     </section>
   );

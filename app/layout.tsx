@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | NexHub - School Education Infrastructure",
   },
   description:
-    "NexHub is a trusted education verification infrastructure for schools. Build verified learning records, verify student activity, and establish institutional trust. Digital backbone for secondary schools, universities, NGOs, and education programs built to scale across Africa.",
+    "NexHub helps secondary schools build verified learning records — RedNotes, activities, recommendations, and events — with teacher review, school approval, and shareable verification links.",
   keywords: [
     "NexHub",
     "Nex Hub",
@@ -163,12 +163,7 @@ export default function RootLayout({
               name: "NexHub",
               url: "https://nexhub.africa",
               description:
-                "Africa's education verification infrastructure for schools",
-              potentialAction: {
-                "@type": "SearchAction",
-                target: "https://nexhub.africa/search?q={search_term_string}",
-                "query-input": "required name=search_term_string",
-              },
+                "Verified learning records for secondary schools across Africa",
             }),
           }}
         />
@@ -182,52 +177,9 @@ export default function RootLayout({
               "@type": "SoftwareApplication",
               name: "NexHub",
               applicationCategory: "EducationalApplication",
-              operatingSystem: "Web",
+              operatingSystem: "iOS, Android, Web",
               description:
-                "Education verification infrastructure for schools across Africa",
-              offers: {
-                "@type": "Offer",
-                price: "0",
-                priceCurrency: "USD",
-              },
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                ratingCount: "100",
-              },
-            }),
-          }}
-        />
-
-        <Script
-          id="founder-structured-data"
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Person",
-              name: "Elochukwu Ekwugha",
-              url: "https://elochukwu-ekwugha.vercel.app/",
-              sameAs: [
-                // "https://linkedin.com/in/yourprofile",
-                "https://github.com/ekwugha",
-                // Add other social profiles
-              ],
-              jobTitle: "Founder & Creator",
-              // worksFor: {
-              //   "@type": "Organization",
-              //   name: "NexHub",
-              //   url: "https://nexhub.africa",
-              // },
-              description:
-                "Founder and creator of NexHub, Africa's education verification infrastructure for schools.",
-              alumniOf: [], // Add your alma mater if relevant
-              knowsAbout: [
-                "Education Technology",
-                "School Infrastructure",
-                "Verification Systems",
-                "African Education",
-              ],
+                "Mobile apps and school portals for verified learning records — RedNotes, events, teacher review, and school-issued verification links.",
             }),
           }}
         />
