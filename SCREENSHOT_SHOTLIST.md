@@ -5,7 +5,7 @@ Homepage placeholders reference these paths. Until files exist, the site shows l
 
 Aspect tips: phone UI → portrait `9:16` or cropped phone frame; admin UI → landscape `16:9`.
 
-Story framing for captions: everyday school life that quietly builds a lasting shared record — not a one-shot “complete these steps to get a link” funnel. RedNote = Read Every Day. One app, three roles.
+Story framing for captions: everyday school life that quietly builds a NexHub Record — growth through school, not just exam results. RedNote = Read Every Day. One app, three roles.
 
 ---
 
@@ -34,8 +34,8 @@ Story framing for captions: everyday school life that quietly builds a lasting s
 | S02 | `admin-student-detail.png` | Student detail (overview) | Identity + enrollment |
 | S03 | `admin-teachers.png` | Teachers list / upload | Teacher provisioning |
 | S04 | `admin-classes.png` | Classes & subjects | Academic structure |
-| S05 | `admin-final-approvals.png` | Final approvals / credentials | School seals official record |
-| S06 | `admin-verification-link.png` | Cryptographic share / verification link UI | Immutable link at the finish |
+| S05 | `admin-final-approvals.png` | Final approvals / NexHub Records | School seals official record |
+| S06 | `admin-verification-link.png` | Issue NexHub Record UI | Cryptographic immutable record |
 | S07 | `admin-attendance-readonly.png` | Student attendance tab | Institutional + parent-visible story |
 
 ## Super admin (`nexhub-super-admin`)

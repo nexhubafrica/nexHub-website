@@ -22,7 +22,7 @@ const steps = [
   {
     n: "04",
     title: "The school manages at institutional level — and seals the record",
-    body: "School admins run the portal: approve teachers, manage students, classes and subjects, see growth trails, keep audit logs, and issue NexHub Records — cryptographic, immutable snapshots for scholarships, transfers, university admission, and programs. (Schools join the network through NexHub platform ops — admins manage their school once they are on it.)",
+    body: "School admins run the portal at institutional level: approve teachers, manage students, classes and subjects, see growth trails, keep audit logs, and issue NexHub Records — cryptographic, immutable snapshots for scholarships, transfers, university admission, and programs.",
   },
   {
     n: "05",
