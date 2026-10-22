@@ -18,11 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://nexhub.africa"),
   title: {
-    default: "NexHub - Education Verification Infrastructure for Schools",
-    template: "%s | NexHub - School Education Infrastructure",
+    default: "NexHub — School life that becomes a lasting record",
+    template: "%s | NexHub",
   },
   description:
-    "NexHub helps secondary schools build verified learning records — RedNotes, activities, recommendations, and events — with teacher review, school approval, and shareable verification links.",
+    "NexHub sits inside everyday school life — learning notes, events, activities, and parent updates — so students leave with a cryptographic, immutable learning record schools can stand behind.",
   keywords: [
     "NexHub",
     "Nex Hub",
@@ -70,9 +70,9 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://nexhub.africa",
     siteName: "NexHub",
-    title: "NexHub - Education Verification Infrastructure for Schools",
+    title: "NexHub — School life that becomes a lasting record",
     description:
-      "Trusted education infrastructure for schools built to scale across Africa. Build verified learning records, verify student activity, and establish institutional trust.",
+      "Everyday school life for students, teachers, and parents — with a cryptographic, tamper-evident learning record at the end of the road.",
     images: [
       {
         url: "/og-image.png",

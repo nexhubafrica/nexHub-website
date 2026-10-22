@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
-  const onVerify = pathname === "/verify" || pathname?.startsWith("/verify/");
   const onHome = pathname === "/";
 
   return (
@@ -47,17 +46,6 @@ export default function Navbar() {
               Request access
             </Link>
           )}
-          <Link
-            href="/verify"
-            aria-current={onVerify ? "page" : undefined}
-            className={`rounded-full px-4 py-2 text-sm font-semibold transition-colors ${
-              onVerify
-                ? "bg-dark-card text-dark-primary-bright border border-dark-primary/40"
-                : "border border-dark-primary/40 text-dark-text hover:border-dark-primary-bright hover:text-dark-primary-bright"
-            }`}
-          >
-            Verify
-          </Link>
         </nav>
       </div>
     </header>

@@ -6,28 +6,28 @@ import { useRef } from "react";
 const steps = [
   {
     n: "01",
-    title: "Students create learning activity",
-    body: "RedNotes that explain lessons, school activities, recommendations, and event participation — the raw material of a learning record.",
+    title: "Students live school on the app",
+    body: "After lessons they capture what stuck — a written note, a clip, an activity. They join class events, show up for programs, and ask for recommendations when a teacher sees promise (including for scholarships). It is everyday school, not a special project.",
   },
   {
     n: "02",
-    title: "Teachers verify what is true",
-    body: "Inbox review for RedNotes, activities, and recommendations. Teachers approve, reject, or respond — verification is human, not a scorebot.",
+    title: "Teachers keep the truth honest",
+    body: "Teachers see the day’s notes, activities, and recommendations in one place. They approve what happened, push back when something is off, run events, and mark who was present — the human layer of trust.",
   },
   {
     n: "03",
-    title: "Events lock in participation",
-    body: "Teachers run class, school, program, competition, and other events. Students RSVP. Teachers mark who was present.",
+    title: "Parents stay close without chasing",
+    body: "Parents see their child’s trail: learning notes, event participation, activities, recommendations, and attendance. When a teacher or school posts an assignment or event for the student, the parent simply knows — safely inside the app, not scattered across chats.",
   },
   {
     n: "04",
-    title: "School admin finalizes records",
-    body: "The school portal issues credentials and final approvals — enrollment, recommendations, and institutional validation.",
+    title: "The school seals what becomes official",
+    body: "School admin runs enrollment, classes, and final institutional approvals. What the school stands behind becomes part of the student’s lasting record.",
   },
   {
     n: "05",
-    title: "Students receive shareable links",
-    body: "When the school is ready, students get verification links they can share for admissions, scholarships, and programs. Outsiders confirm on nexhub.africa/verify.",
+    title: "At the end of the road — a link that cannot be tampered with",
+    body: "When it is time to show admissions, scholarships, or programs what this student has done, the school issues a cryptographic verification link. Immutable. Tamper-evident. Not a screenshot someone can edit overnight.",
   },
 ];
 
@@ -50,18 +50,19 @@ export default function HowItWorksSection() {
           transition={{ duration: 0.7 }}
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
-            End-to-end record flow
+            How school life flows
           </p>
           <h2
             id="how-heading"
             className="text-4xl md:text-5xl font-bold text-dark-text leading-tight"
           >
-            From classroom activity to a trusted, shareable record.
+            Day by day in school. Forever in the record.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            NexHub is not only a feed. It is the path that turns student work
-            and participation into institution-backed evidence — for the full
-            product, including pieces still rolling out.
+            NexHub is not a checklist you complete once to “get a link.” It is
+            how students, teachers, parents, and the school already move through
+            the year — with proof quietly accumulating until the moment they
+            need to share it.
           </p>
         </motion.div>
 

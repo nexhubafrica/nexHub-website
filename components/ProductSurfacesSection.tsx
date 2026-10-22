@@ -8,43 +8,43 @@ const shots = [
   {
     src: "/screenshots/mobile-student-rednote-create.png",
     shotId: "M02",
-    alt: "Student creating a RedNote",
-    caption: "Student app — create a RedNote that explains a lesson",
+    alt: "Student jotting what they learnt after school",
+    caption: "Student — everyday learning note after class",
     aspect: "phone" as const,
   },
   {
     src: "/screenshots/mobile-teacher-inbox.png",
     shotId: "M04",
-    alt: "Teacher inbox with pending verification",
-    caption: "Teacher app — inbox of RedNotes, activities, recommendations",
+    alt: "Teacher inbox with pending items",
+    caption: "Teacher — day’s notes, activities, recommendations",
     aspect: "phone" as const,
   },
   {
     src: "/screenshots/mobile-teacher-approve.png",
     shotId: "M05",
-    alt: "Teacher approving a RedNote",
-    caption: "Teacher app — verify what is true for the school",
+    alt: "Teacher confirming a learning note",
+    caption: "Teacher — confirming what is true",
     aspect: "phone" as const,
   },
   {
-    src: "/screenshots/mobile-teacher-event-checkin.png",
-    shotId: "M07",
-    alt: "Teacher marking event attendance",
-    caption: "Teacher app — event check-in and participation",
+    src: "/screenshots/mobile-parent-dashboard.png",
+    shotId: "M09",
+    alt: "Parent view of their child’s school trail",
+    caption: "Parent — events, notes, attendance in one place",
     aspect: "phone" as const,
   },
   {
     src: "/screenshots/admin-final-approvals.png",
     shotId: "S05",
     alt: "School admin final approvals",
-    caption: "School portal — final approvals & credentials",
+    caption: "School portal — sealing what becomes official",
     aspect: "landscape" as const,
   },
   {
     src: "/screenshots/admin-verification-link.png",
     shotId: "S06",
-    alt: "School issuing a verification link",
-    caption: "School portal — issue the link students can share",
+    alt: "School issuing a cryptographic share link",
+    caption: "School portal — immutable share link at the finish",
     aspect: "landscape" as const,
   },
 ];
@@ -74,11 +74,12 @@ export default function ProductSurfacesSection() {
             id="product-heading"
             className="text-4xl md:text-5xl font-bold text-dark-text leading-tight"
           >
-            Mobile for learning. Portals for the institution.
+            Where school life actually happens.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            Replace the frames below with live captures from the app and school
-            admin. Shot IDs match{" "}
+            Drop live captures into{" "}
+            <code className="text-dark-primary-bright">public/screenshots/</code>
+            . Shot IDs match{" "}
             <code className="text-dark-primary-bright">SCREENSHOT_SHOTLIST.md</code>.
           </p>
         </motion.div>

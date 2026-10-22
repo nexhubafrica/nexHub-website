@@ -11,7 +11,7 @@ export default function StatusSection() {
     <section
       id="access"
       ref={ref}
-      className="relative py-28 px-6 bg-dark-bg"
+      className="relative py-28 px-6 bg-dark-bg-alt"
       aria-labelledby="access-heading"
     >
       <div className="mx-auto max-w-3xl text-center">
@@ -42,9 +42,9 @@ export default function StatusSection() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.1 }}
         >
-          Partners get the student & teacher mobile apps, school admin portal,
-          and the path from classroom activity to school-issued verification
-          links. We onboard carefully so trust stays intact.
+          Partners get student, teacher, and parent mobile apps plus the school
+          portal — so daily school life is easier now, and every student’s trail
+          can become an immutable record when it is time to share.
         </motion.p>
 
         <motion.a

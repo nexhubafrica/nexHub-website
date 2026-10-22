@@ -17,10 +17,10 @@ const roles = [
     icon: HiUserGroup,
     surface: "Mobile app",
     points: [
-      "Create RedNotes and build a verified learning trail",
-      "Join events, RSVP, and show up in attendance",
-      "Request recommendations and activities that feed their record",
-      "Receive school-issued verification links to share",
+      "Jot everyday learning — notes, clips, what they learnt after school",
+      "Join class and school events; build participation over time",
+      "Activities and recommendations (including scholarship pushes) land on their trail",
+      "Years later: a cryptographic share link of everything that stood",
     ],
   },
   {
@@ -28,10 +28,21 @@ const roles = [
     icon: HiAcademicCap,
     surface: "Mobile app",
     points: [
-      "Inbox for RedNotes, activities, and recommendations",
-      "Approve or reject with institutional credibility",
-      "Create events and mark who was present",
-      "The human layer of verification — not automated scoring",
+      "Review daily learning notes, activities, and recommendations",
+      "Approve what is true; keep the record honest",
+      "Create events, mark attendance, post what students need to know",
+      "Reach parents safely by posting in-app — not chasing phone numbers",
+    ],
+  },
+  {
+    title: "Parents",
+    icon: HiUsers,
+    surface: "Mobile app",
+    points: [
+      "See the full picture: learning notes, events, participation, activities",
+      "Recommendations that matter — e.g. scholarship records — in one place",
+      "Attendance visibility without calling the school every week",
+      "Know when teachers or school post events or assignments for their child",
     ],
   },
   {
@@ -40,18 +51,9 @@ const roles = [
     surface: "School portal",
     points: [
       "Provision students, teachers, classes, and subjects",
-      "Final approvals and credential issuance",
-      "Give students the official verification / share links",
-      "See attendance and institutional activity",
-    ],
-  },
-  {
-    title: "Parents",
-    icon: HiUsers,
-    surface: "Mobile app",
-    points: [
-      "Link children and see verified progress",
-      "Visibility without managing approvals or school ops",
+      "Final institutional approvals on what becomes official",
+      "Issue the cryptographic verification link when records are ready to share",
+      "Run the school side of attendance and institutional activity",
     ],
   },
   {
@@ -66,10 +68,10 @@ const roles = [
   {
     title: "Programs & partners",
     icon: HiGlobeAlt,
-    surface: "Verify + records",
+    surface: "Shared records",
     points: [
-      "Confirm participation and learning consistency",
-      "Trust institution-backed links — not screenshots alone",
+      "Receive institution-backed, tamper-evident proof — not edit-friendly screenshots",
+      "Trust consistency of learning and participation over time",
     ],
   },
 ];
@@ -93,13 +95,13 @@ export default function RolesSection() {
           transition={{ duration: 0.7 }}
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
-            Who uses NexHub
+            Who lives on NexHub
           </p>
           <h2
             id="roles-heading"
             className="text-4xl md:text-5xl font-bold text-dark-text leading-tight"
           >
-            Built for every role in the school trust loop.
+            The whole school circle — students, teachers, parents, admin.
           </h2>
         </motion.div>
 

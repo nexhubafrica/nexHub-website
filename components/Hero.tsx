@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -36,8 +35,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.05 }}
         >
-          Verified learning records for secondary schools — from RedNotes and
-          events to shareable proof.
+          School life, saved as it happens — so the record stands forever.
         </motion.h1>
 
         <motion.p
@@ -46,9 +44,10 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.15 }}
         >
-          Students create. Teachers verify. Schools approve and issue links.
-          Partners confirm what is true — on mobile and school portals built for
-          Nigeria, designed to scale.
+          After class, students jot what they learnt — a note, a short video, an
+          activity. Teachers and schools quietly confirm what is true. Parents
+          stay in the loop. Over the years it becomes a cryptographic, immutable
+          learning record they can share when it matters.
         </motion.p>
 
         <motion.div
@@ -63,17 +62,11 @@ export default function Hero() {
           >
             Request school access
           </a>
-          <Link
-            href="/verify"
-            className="inline-flex items-center justify-center rounded-full border border-dark-primary/50 px-7 py-3.5 text-base font-semibold text-dark-text hover:border-dark-primary-bright hover:text-dark-primary-bright transition-colors"
-          >
-            Verify a record
-          </Link>
           <a
             href="#how-it-works"
             className="inline-flex items-center justify-center px-3 py-3.5 text-base font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors"
           >
-            See how it works
+            See how school life flows
           </a>
         </motion.div>
       </div>

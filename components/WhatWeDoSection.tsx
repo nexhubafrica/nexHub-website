@@ -7,29 +7,34 @@ import {
   HiAcademicCap,
   HiCalendar,
   HiClipboardCheck,
-  HiLink,
+  HiShieldCheck,
+  HiUsers,
 } from "react-icons/hi";
 
 const recordItems = [
   {
     icon: HiDocumentText,
-    text: "RedNotes — student explanations of lessons, reviewed by teachers",
+    text: "Everyday learning notes — after school, students capture what they learnt: a quick jot, a voice note, a short video of the lesson landing",
   },
   {
     icon: HiClipboardCheck,
-    text: "Activities & recommendations — verified contributions to the record",
+    text: "Activities & recommendations — clubs, projects, and teacher push for scholarships or programs become part of the same trail",
   },
   {
     icon: HiCalendar,
-    text: "Events — class, school, program, competition, and other participation with check-in",
+    text: "Class & school events — RSVPs, participation, and attendance that parents and teachers can both see",
   },
   {
     icon: HiAcademicCap,
-    text: "Teacher & school validation — human review, institutional final approval",
+    text: "Human verification — teachers review what is true; the school seals institutional authority",
   },
   {
-    icon: HiLink,
-    text: "Shareable verification links — issued by the school for admissions and programs",
+    icon: HiUsers,
+    text: "Parents in the loop — progress, events, assignments posted to the student, and attendance — without chasing WhatsApp chains",
+  },
+  {
+    icon: HiShieldCheck,
+    text: "A cryptographic share link at the end of the road — immutable and tamper-evident, so the record cannot be quietly rewritten",
   },
 ];
 
@@ -47,12 +52,13 @@ export default function WhatWeDoSection() {
           transition={{ duration: 0.7 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-dark-text leading-tight">
-            A learning record that goes beyond grades.
+            Not a one-off task. Just school — remembered.
           </h2>
           <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            NexHub captures how students learn and participate over time — then
-            wraps it in educator review and school authority so outsiders can
-            trust what they see.
+            NexHub sits inside ordinary school days. Students keep showing up:
+            notes after lessons, events, activities, recommendations. Teachers
+            and the school keep the bar honest. Years later, that trail is still
+            theirs — sealed so it cannot be changed or faked.
           </p>
         </motion.div>
 
@@ -63,11 +69,10 @@ export default function WhatWeDoSection() {
           transition={{ duration: 0.7, delay: 0.1 }}
         >
           <h3 className="text-2xl font-bold text-dark-text mb-8">
-            What a{" "}
+            What accumulates into a{" "}
             <span className="text-dark-primary-bright">
-              verified learning record
-            </span>{" "}
-            includes
+              lasting learning record
+            </span>
           </h3>
           <ul className="space-y-5">
             {recordItems.map((item) => {
@@ -85,9 +90,9 @@ export default function WhatWeDoSection() {
             })}
           </ul>
           <p className="mt-8 text-sm text-dark-text-secondary/90 leading-relaxed border-t border-dark-card-alt pt-6">
-            Records are private by default and shared only with permission.
-            Verification reflects educator review and institutional validation —
-            not automated scoring.
+            Private by default. Shared only when the student and school choose.
+            Verification is educator review and school authority — never a
+            scorebot rewriting history.
           </p>
         </motion.div>
       </div>

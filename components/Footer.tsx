@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 export default function Footer() {
   return (
     <footer className="relative py-14 px-6 bg-dark-bg border-t border-dark-card-alt">
@@ -11,8 +9,8 @@ export default function Footer() {
             NexHub
           </p>
           <p className="text-dark-text-secondary max-w-md leading-relaxed">
-            Verified learning records for schools — mobile apps, school admin,
-            and shareable proof.
+            School life, saved as it happens — so students leave with a record
+            that stands forever.
           </p>
         </div>
         <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm font-medium text-dark-text-secondary">
@@ -22,9 +20,9 @@ export default function Footer() {
           <a href="#roles" className="hover:text-dark-primary-bright">
             Roles
           </a>
-          <Link href="/verify" className="hover:text-dark-primary-bright">
-            Verify
-          </Link>
+          <a href="#coming-next" className="hover:text-dark-primary-bright">
+            Coming next
+          </a>
           <a
             href="mailto:hello@nexhub.africa"
             className="hover:text-dark-primary-bright"

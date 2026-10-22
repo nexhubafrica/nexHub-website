@@ -18,23 +18,26 @@ export default function TrustSecuritySection() {
   const features = [
     {
       icon: HiLockClosed,
-      title: "Permission-based access",
-      description: "Data is only accessible with explicit authorization",
+      title: "Cryptographic share links",
+      description:
+        "When records are shared, the link is cryptographic — immutable and tamper-evident, not an editable file",
     },
     {
       icon: HiEyeOff,
-      title: "No public exposure of records",
-      description: "Student records remain private and protected",
+      title: "Private until you share",
+      description:
+        "Student trails stay private by default; nothing is public without permission",
     },
     {
       icon: HiBan,
       title: "No resale of data",
-      description: "Your data is never sold or shared with third parties",
+      description: "School and student data is never sold to third parties",
     },
     {
       icon: HiClipboardList,
-      title: "Full audit trail",
-      description: "Complete transparency on who accessed what and when",
+      title: "Human verification + audit",
+      description:
+        "Teachers and schools confirm what is true; access and changes leave a trail",
     },
   ];
 
@@ -142,7 +145,7 @@ export default function TrustSecuritySection() {
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ duration: 0.8, delay: 1 }}
           >
-            Verification reflects teacher review and school validation — not automated scoring.
+            Built so everyday school life can become a record that cannot be quietly rewritten.
           </motion.p>
         </motion.div>
       </div>
