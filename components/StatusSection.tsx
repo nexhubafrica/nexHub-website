@@ -25,17 +25,23 @@ export default function StatusSection() {
           className="text-4xl md:text-5xl font-bold text-dark-text mb-6"
           initial={false}
         >
-          Request access for your school
+          Start with your school
         </motion.h2>
+
+        <motion.p
+          className="mb-4 text-xl font-semibold text-dark-text md:text-2xl"
+          initial={false}
+        >
+          Make school life easier now. Make proof stronger later.
+        </motion.p>
 
         <motion.p
           className="text-lg md:text-xl text-dark-text-secondary leading-relaxed mb-10"
           initial={false}
         >
-          Partners get one mobile app for students, teachers, and parents — plus
-          the school portal — so daily school life is easier now, and every
-          student’s growth trail can become an immutable NexHub Record when it
-          is time.
+          Bring students, teachers, parents, and the school portal into one
+          flow. Make daily school life easier now, then issue a sealed NexHub
+          Record when proof is needed.
         </motion.p>
 
         <motion.a
@@ -43,7 +49,7 @@ export default function StatusSection() {
           className="inline-flex items-center justify-center rounded-full bg-dark-primary px-8 py-4 text-base font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
           initial={false}
         >
-          Email hello@nexhub.africa
+          Start with your school
         </motion.a>
       </div>
     </section>

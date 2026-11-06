@@ -32,13 +32,12 @@ export default function Hero() {
           </div>
 
           <h1 className="max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-dark-text sm:text-5xl">
-            School life, saved as it happens — so the record stands forever.
+            School life, saved as it happens.
           </h1>
 
           <p className="mt-5 max-w-md text-base leading-relaxed text-dark-text-secondary sm:text-lg">
-            One app for students, teachers, and parents. The school seals that
-            trail as a NexHub Record when scholarships, admissions, or the
-            student’s own history need proof.
+            One app for students, teachers, and parents. A sealed Record when
+            proof is needed.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -46,13 +45,13 @@ export default function Hero() {
               href="mailto:hello@nexhub.africa?subject=School%20access%20request"
               className="inline-flex items-center justify-center rounded-full bg-dark-primary px-7 py-3.5 text-base font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
             >
-              Request school access
+              Start with your school
             </a>
             <a
-              href="#how-it-works"
+              href="#record"
               className="inline-flex items-center justify-center px-3 py-3.5 text-base font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors"
             >
-              See how school life flows
+              See the Record flow
             </a>
           </div>
         </div>

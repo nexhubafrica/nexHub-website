@@ -12,6 +12,7 @@ import ProductSurfacesSection from "@/components/ProductSurfacesSection";
 import TrustSecuritySection from "@/components/TrustSecuritySection";
 import StatusSection from "@/components/StatusSection";
 import Footer from "@/components/Footer";
+import BackToTopButton from "@/components/BackToTopButton";
 
 export default function Home() {
   return (
@@ -29,6 +30,7 @@ export default function Home() {
         <TrustSecuritySection />
         <StatusSection />
         <Footer />
+        <BackToTopButton />
       </main>
     </>
   );
