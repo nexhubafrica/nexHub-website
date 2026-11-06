@@ -1,5 +1,8 @@
 "use client";
 
+import { useReducedMotion } from "framer-motion";
+import { useEffect, useState } from "react";
+
 const pulse = [
   { tag: "Announcement", text: "Inter-house meet · Friday 7:30" },
   { tag: "Timetable", text: "Biology practical moved to lab 2" },
@@ -7,9 +10,74 @@ const pulse = [
   { tag: "Poll", text: "Club fair — which table are you on?" },
 ];
 
-const reach = ["Private", "School", "LGA", "Everyone"];
+const roleBenefits = [
+  {
+    role: "Students",
+    short: "Learn, join in, and keep the story of school.",
+    screenTitle: "My school trail",
+    stat: "12",
+    statLabel: "items this term",
+    visualRows: ["RedNote posted", "Club role added", "Event joined"],
+    benefits: [
+      "Access notes, class updates, resources, events, and activities.",
+      "Build a visible trail of learning, participation, and achievements.",
+      "Leave school with more than exam scores when the Record is issued.",
+    ],
+  },
+  {
+    role: "Teachers",
+    short: "Guide the class and confirm real student effort.",
+    screenTitle: "Teacher inbox",
+    stat: "8",
+    statLabel: "items to review",
+    visualRows: ["Verify activity", "Post class pulse", "Give feedback"],
+    benefits: [
+      "Share materials, updates, assignments, polls, and reminders.",
+      "Review work and verify activities that should become proof.",
+      "See participation over time, not only exam-day performance.",
+    ],
+  },
+  {
+    role: "Parents",
+    short: "See what the child is doing before results come out.",
+    screenTitle: "Child overview",
+    stat: "4",
+    statLabel: "new updates",
+    visualRows: ["Class pulse", "Event reminder", "Progress note"],
+    benefits: [
+      "Follow class pulse, announcements, events, and learning progress.",
+      "Understand the child beyond marks and last-minute messages.",
+      "Stay connected before the end of term, not only when results are out.",
+    ],
+  },
+  {
+    role: "School portal",
+    short: "Run everyday school life before sealing the Record.",
+    screenTitle: "School portal",
+    stat: "Audit",
+    statLabel: "trail on",
+    visualRows: ["Students organized", "Classes managed", "Records ready"],
+    benefits: [
+      "Organize students, teachers, classes, updates, and activity trails.",
+      "Keep an audit trail for what was reviewed, verified, and issued.",
+      "Build trust with parents, students, universities, NGOs, and partners.",
+    ],
+  },
+];
 
 export default function AlsoOnNexHubSection() {
+  const reduce = useReducedMotion();
+  const [active, setActive] = useState(0);
+  const selected = roleBenefits[active];
+
+  useEffect(() => {
+    if (reduce) return;
+    const id = window.setInterval(() => {
+      setActive((index) => (index + 1) % roleBenefits.length);
+    }, 4200);
+    return () => window.clearInterval(id);
+  }, [reduce]);
+
   return (
     <section
       id="also-on-nexhub"
@@ -26,107 +94,138 @@ export default function AlsoOnNexHubSection() {
         >
           Useful every week. Ready when the record is issued.
         </h2>
+        <p className="mt-5 max-w-3xl text-base leading-relaxed text-dark-text-secondary md:text-lg">
+          NexHub is not only the final Record. It helps the school run,
+          communicate, teach, and track real activity while the term is still
+          happening, so the Record grows from school life people already use.
+        </p>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
-          <article className="rounded-2xl border border-dark-card-alt bg-dark-card p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-dark-text">
-              Class pulse reaches home
-            </h3>
-            <p className="mt-1 text-sm text-dark-text-secondary">
-              Students see it. Parents see it too.
-            </p>
-            <ul className="mt-5 divide-y divide-dark-card-alt">
-              {pulse.map((item) => (
-                <li key={item.tag} className="flex items-baseline gap-3 py-3">
-                  <span className="w-28 shrink-0 text-[11px] font-bold uppercase tracking-wider text-dark-primary-bright">
-                    {item.tag}
+        <div className="mt-12 grid items-start gap-8 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
+          <div className="space-y-3">
+            {roleBenefits.map((item, index) => {
+              const on = index === active;
+              return (
+                <button
+                  key={item.role}
+                  type="button"
+                  className={`w-full rounded-2xl border px-5 py-4 text-left transition-colors ${
+                    on
+                      ? "border-dark-primary bg-dark-card"
+                      : "border-dark-card-alt bg-dark-card/55 hover:bg-dark-card"
+                  }`}
+                  aria-pressed={on}
+                  onClick={() => setActive(index)}
+                >
+                  <span className="flex items-start justify-between gap-4">
+                    <span>
+                      <span className="block text-xs font-bold uppercase tracking-[0.16em] text-dark-primary-bright">
+                        {item.role}
+                      </span>
+                      <span className="mt-2 block text-lg font-semibold leading-snug text-dark-text">
+                        {item.short}
+                      </span>
+                    </span>
+                    <span
+                      className={`mt-1 h-3 w-3 shrink-0 rounded-full ${
+                        on ? "bg-dark-primary-bright" : "bg-dark-card-alt"
+                      }`}
+                      aria-hidden
+                    />
                   </span>
-                  <span className="text-sm text-dark-text">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+                </button>
+              );
+            })}
+          </div>
 
-          <article className="rounded-2xl border border-dark-card-alt bg-dark-card p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-dark-text">
-              A RedNote can travel
-            </h3>
-            <p className="mt-1 text-sm text-dark-text-secondary">
-              The student chooses who learns from the explanation.
-            </p>
-            <div className="mt-6 flex flex-wrap gap-2">
-              {reach.map((label) => {
-                const on = label === "LGA";
-                return (
-                  <span
-                    key={label}
-                    className={`rounded-full px-4 py-2 text-sm font-semibold ${
-                      on
-                        ? "bg-dark-primary text-dark-bg"
-                        : "bg-dark-bg text-dark-text-secondary"
-                    }`}
-                  >
-                    {label}
-                  </span>
-                );
-              })}
-            </div>
-            <p className="mt-6 rounded-xl bg-dark-bg px-4 py-3 text-sm text-dark-text">
-              “Explain photosynthesis without copying the textbook.”
-              <span className="mt-1 block text-dark-text-secondary">
-                Verified · visible across the LGA
-              </span>
-            </p>
-          </article>
+          <div className="rounded-3xl border border-dark-card-alt bg-dark-card p-4 sm:p-6">
+            <div className="grid gap-5 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)]">
+              <div className="rounded-2xl bg-dark-bg p-4">
+                <div className="mx-auto max-w-64 rounded-[2rem] border border-dark-card-alt bg-dark-card p-3">
+                  <div className="rounded-[1.4rem] bg-dark-bg px-4 py-5">
+                    <div className="flex items-center justify-between">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-dark-primary-bright">
+                        {selected.screenTitle}
+                      </p>
+                      <span className="h-2 w-2 rounded-full bg-dark-primary-bright" />
+                    </div>
 
-          <article className="rounded-2xl border border-dark-card-alt bg-dark-card p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-dark-text">
-              The year, already on the trail
-            </h3>
-            <ol className="mt-5 space-y-3">
-              {[
-                ["Sep", "Science club secretary"],
-                ["Nov", "Spelling bee · verified"],
-                ["Jan", "Inter-house athletics"],
-                ["Term", "Attendance beside those events"],
-              ].map(([when, what]) => (
-                <li key={when} className="flex gap-4">
-                  <span className="w-12 shrink-0 font-mono text-xs font-bold text-dark-primary-bright">
-                    {when}
-                  </span>
-                  <span className="border-l border-dark-primary/40 pl-4 text-sm text-dark-text">
-                    {what}
-                  </span>
-                </li>
-              ))}
-            </ol>
-          </article>
+                    <div className="mt-5 rounded-2xl bg-dark-card px-4 py-5">
+                      <p className="text-4xl font-bold text-dark-text">
+                        {selected.stat}
+                      </p>
+                      <p className="mt-1 text-xs uppercase tracking-wider text-dark-text-secondary">
+                        {selected.statLabel}
+                      </p>
+                    </div>
 
-          <article className="rounded-2xl border border-dark-card-alt bg-dark-card p-5 sm:p-6">
-            <h3 className="text-lg font-semibold text-dark-text">
-              The portal earns its place first
-            </h3>
-            <p className="mt-1 text-sm text-dark-text-secondary">
-              People, classes, and an audit trail — before anyone needs a seal.
-            </p>
-            <dl className="mt-5 grid grid-cols-3 gap-2 text-center">
-              {[
-                ["128", "Students"],
-                ["14", "Classes"],
-                ["Audit", "On"],
-              ].map(([value, label]) => (
-                <div key={label} className="rounded-xl bg-dark-bg px-2 py-4">
-                  <dt className="text-[11px] uppercase tracking-wider text-dark-text-secondary">
-                    {label}
-                  </dt>
-                  <dd className="mt-1 text-xl font-bold text-dark-text">{value}</dd>
+                    <div className="mt-4 space-y-2">
+                      {selected.visualRows.map((row, index) => (
+                        <div
+                          key={row}
+                          className="flex items-center gap-3 rounded-xl bg-dark-card px-3 py-3"
+                        >
+                          <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-dark-primary/15 text-xs font-bold text-dark-primary-bright">
+                            {index + 1}
+                          </span>
+                          <span className="text-sm text-dark-text">{row}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
-              ))}
-            </dl>
-            <p className="mt-4 text-xs leading-relaxed text-dark-text-secondary">
-              Illustrative counts, not a live school.
-            </p>
-          </article>
+              </div>
+
+              <div>
+                <div className="rounded-2xl border border-dark-card-alt bg-dark-bg p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-dark-primary-bright">
+                    Weekly school life
+                  </p>
+                  <ul className="mt-4 divide-y divide-dark-card-alt">
+                    {pulse.map((item) => (
+                      <li key={item.tag} className="flex items-baseline gap-3 py-3">
+                        <span className="w-28 shrink-0 text-[11px] font-bold uppercase tracking-wider text-dark-primary-bright">
+                          {item.tag}
+                        </span>
+                        <span className="text-sm text-dark-text">{item.text}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div className="mt-4 rounded-2xl border border-dark-card-alt bg-dark-bg p-4">
+                  <p className="text-xs font-bold uppercase tracking-[0.16em] text-dark-primary-bright">
+                    Benefit
+                  </p>
+                  <ul className="mt-4 space-y-3">
+                    {selected.benefits.map((benefit) => (
+                      <li
+                        key={benefit}
+                        className="flex gap-3 text-sm leading-relaxed text-dark-text-secondary"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-dark-primary-bright" />
+                        <span>{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-5 grid gap-3 rounded-2xl border border-dark-primary/30 bg-dark-bg p-4 sm:grid-cols-4">
+              {["Use weekly", "Review", "Verify", "Issue record"].map(
+                (label, index) => (
+                  <div key={label} className="flex items-center gap-3 sm:block">
+                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-dark-primary text-xs font-bold text-dark-bg">
+                      {index + 1}
+                    </span>
+                    <p className="text-sm font-semibold text-dark-text sm:mt-3">
+                      {label}
+                    </p>
+                  </div>
+                ),
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </section>
