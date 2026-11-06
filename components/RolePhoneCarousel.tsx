@@ -85,9 +85,9 @@ export default function RolePhoneCarousel({
           <motion.div
             key={slide.src}
             className="absolute inset-0 cursor-grab active:cursor-grabbing"
-            initial={{ opacity: 0, x: 16 }}
+            initial={reduceMotion === false ? { opacity: 0, x: 16 } : false}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -16 }}
+            exit={reduceMotion === false ? { opacity: 0, x: -16 } : { opacity: 1 }}
             transition={{ duration: 0.32, ease: "easeOut" }}
             drag={count > 1 ? "x" : false}
             dragConstraints={{ left: 0, right: 0 }}
@@ -99,7 +99,7 @@ export default function RolePhoneCarousel({
               alt={slide.alt}
               fill
               draggable={false}
-              className="pointer-events-none object-cover object-top scale-[1.02] blur-[1.5px] brightness-[0.98]"
+              className="pointer-events-none object-cover object-top"
               sizes={featured ? "240px" : "200px"}
               priority={featured && index === 0}
             />
@@ -133,8 +133,11 @@ export default function RolePhoneCarousel({
         ) : null}
       </div>
 
-      <figcaption className="mt-3 text-center text-sm font-semibold text-dark-text">
-        {role}
+      <figcaption className="mt-3 text-center">
+        <span className="block text-sm font-semibold text-dark-text">{role}</span>
+        <span className="mt-0.5 block text-xs text-dark-text-secondary">
+          {slide.alt}
+        </span>
       </figcaption>
     </figure>
   );

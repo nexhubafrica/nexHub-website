@@ -38,7 +38,7 @@ export default function ScreenshotFrame({
               src={src}
               alt={alt}
               fill
-              className="object-cover object-top scale-[1.02] blur-[1.5px] brightness-[0.98] transition-transform duration-700 group-hover:scale-[1.04] group-hover:blur-[1px]"
+              className="object-cover object-top transition-transform duration-700 group-hover:scale-[1.02]"
               sizes={isPhone ? "220px" : "560px"}
               onError={() => setFailed(true)}
             />

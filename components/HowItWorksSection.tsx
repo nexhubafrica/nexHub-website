@@ -1,93 +1,167 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useInView, useReducedMotion } from "framer-motion";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 
 const steps = [
   {
     n: "01",
-    title: "Students learn out loud — RedNote and beyond",
-    body: "RedNote means Read Every Day: students study a topic, then explain it in their own words — a note, video, voice, or PDF — so peers in their school and across NexHub can learn from them too. They choose visibility (private, school, LGA, or everyone on NexHub). Alongside that: activities like spelling bees and inter-house sports, class events, and recommendations when a teacher sees promise.",
+    title: "Student",
+    body: "Learns out loud. A RedNote, an activity, an event — with a choice of who can see it.",
+    src: "/screenshots/mobile-student-rednote-create.png",
+    alt: "Student creating a RedNote",
+    frame: "phone" as const,
   },
   {
     n: "02",
-    title: "Teachers keep the feed honest",
-    body: "Teachers review RedNotes, activities, and recommendations. They verify what is true and mark verified notes so students — and others reading them — are not drowning in rubbish. They run events, mark who showed up, and post class pulse: announcements, timetables, exams, assignments, polls.",
+    title: "Teacher",
+    body: "Confirms what is true, marks verified notes, and posts class pulse for the class and home.",
+    src: "/screenshots/mobile-teacher-inbox.png",
+    alt: "Teacher verification inbox",
+    frame: "phone" as const,
   },
   {
     n: "03",
-    title: "Parents see everything that matters about their child",
-    body: "Not a chat inbox with teachers. Parents follow their child’s trail end to end — RedNotes, activity participation, event participation, attendance, assignments, and whatever the school or teacher announces. If it reaches the student, the parent can see it too.",
+    title: "School",
+    body: "Runs the portal, then issues a sealed snapshot. The record does not keep changing.",
+    src: "/screenshots/admin-nexhub-records.png",
+    alt: "School portal issuing NexHub Records",
+    frame: "landscape" as const,
   },
   {
     n: "04",
-    title: "The school manages at institutional level — and seals the record",
-    body: "School admins run the portal at institutional level: approve teachers, manage students, classes and subjects, see growth trails, keep audit logs, and issue NexHub Records — cryptographic, immutable snapshots for scholarships, transfers, university admission, and programs.",
-  },
-  {
-    n: "05",
-    title: "NexHub Records that cannot be tampered with",
-    body: "When it is time — for a university, a scholarship, an NGO, or the student’s own forever copy — the school issues a NexHub Record: hashed, sealed, timestamped. It does not change when new activity happens. The student grew it from scratch; the seal proves nobody rewrote it overnight.",
+    title: "Check",
+    body: "A university, scholarship, or program can be shown the seal. The check itself is illustrated below — this site does not run it.",
+    src: null,
+    alt: "",
+    frame: "landscape" as const,
   },
 ];
 
 export default function HowItWorksSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const reduce = useReducedMotion();
+  const [active, setActive] = useState(0);
+  const [paused, setPaused] = useState(false);
+
+  useEffect(() => {
+    if (reduce || paused || !isInView) return;
+    const id = window.setInterval(() => {
+      setActive((i) => (i + 1) % steps.length);
+    }, 3600);
+    return () => window.clearInterval(id);
+  }, [reduce, paused, isInView]);
+
+  const step = steps[active];
 
   return (
     <section
       id="how-it-works"
       ref={ref}
-      className="relative py-28 px-6 bg-dark-bg-alt"
+      className="relative bg-dark-bg-alt px-6 py-24"
       aria-labelledby="how-heading"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget as Node | null)) {
+          setPaused(false);
+        }
+      }}
     >
-      <div className="mx-auto max-w-5xl">
-        <motion.div
-          className="mb-16 max-w-3xl"
-          initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+      <div className="mx-auto max-w-6xl">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
+          How school life flows
+        </p>
+        <h2
+          id="how-heading"
+          className="max-w-2xl text-4xl font-bold leading-tight text-dark-text md:text-5xl"
         >
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
-            How school life flows
-          </p>
-          <h2
-            id="how-heading"
-            className="text-4xl md:text-5xl font-bold text-dark-text leading-tight"
-          >
-            Day by day in school. Forever in the record.
-          </h2>
-          <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            One mobile app — three roles. Plus a school portal for the
-            institution. NexHub is how they already move through the year, with
-            proof quietly accumulating until a NexHub Record is needed.
-          </p>
-        </motion.div>
+          Day by day in school. Forever in the record.
+        </h2>
 
-        <ol className="space-y-5">
-          {steps.map((step, i) => (
-            <motion.li
-              key={step.n}
-              className="rounded-2xl border border-dark-card-alt bg-dark-card p-6 md:p-8 md:flex md:gap-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.55, delay: 0.08 * i }}
-            >
-              <span className="mb-3 block text-sm font-bold tracking-widest text-dark-primary-bright md:mb-0 md:w-16 shrink-0">
-                {step.n}
-              </span>
-              <div>
-                <h3 className="text-xl md:text-2xl font-semibold text-dark-text mb-2">
-                  {step.title}
-                </h3>
-                <p className="text-base md:text-lg text-dark-text-secondary leading-relaxed">
-                  {step.body}
+        <div className="mt-12 grid items-start gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,0.9fr)]">
+          <ol className="relative space-y-2">
+            <div
+              className="absolute bottom-6 left-[1.15rem] top-6 w-px bg-dark-card-alt"
+              aria-hidden
+            />
+            {steps.map((item, i) => {
+              const on = i === active;
+              return (
+                <li key={item.n} className="relative">
+                  <button
+                    type="button"
+                    className={`relative flex w-full gap-4 rounded-2xl px-3 py-4 text-left transition-colors ${
+                      on ? "bg-dark-card" : "hover:bg-dark-card/60"
+                    }`}
+                    aria-current={on ? "step" : undefined}
+                    onClick={() => setActive(i)}
+                  >
+                    <span
+                      className={`relative z-10 mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
+                        on
+                          ? "bg-dark-primary text-dark-bg"
+                          : "bg-dark-bg text-dark-text-secondary ring-1 ring-dark-card-alt"
+                      }`}
+                    >
+                      {item.n}
+                    </span>
+                    <span>
+                      <span className="block text-lg font-semibold text-dark-text">
+                        {item.title}
+                      </span>
+                      <span className="mt-1 block text-sm leading-relaxed text-dark-text-secondary">
+                        {item.body}
+                      </span>
+                    </span>
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+
+          <div className="lg:sticky lg:top-24">
+            {step.src ? (
+              <div
+                className={`relative mx-auto overflow-hidden rounded-3xl border border-dark-card-alt bg-dark-card ${
+                  step.frame === "phone"
+                    ? "aspect-9/16 max-w-70"
+                    : "aspect-video w-full"
+                }`}
+              >
+                <Image
+                  src={step.src}
+                  alt={step.alt}
+                  fill
+                  sizes={step.frame === "phone" ? "280px" : "560px"}
+                  className="object-cover object-top"
+                />
+              </div>
+            ) : (
+              <div className="rounded-2xl border border-dashed border-dark-primary/50 bg-dark-card px-6 py-8">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-dark-primary-bright">
+                  Illustration only
+                </p>
+                <p className="mt-3 font-mono text-sm text-dark-text">
+                  nexhub.africa/verify/NH-123
+                </p>
+                <p className="mt-4 text-2xl font-bold text-dark-text">
+                  Sealed · unchanged
+                </p>
+                <p className="mt-2 text-sm leading-relaxed text-dark-text-secondary">
+                  A recipient would see the issued snapshot and whether it still
+                  matches the seal. This website does not perform that check.
                 </p>
               </div>
-            </motion.li>
-          ))}
-        </ol>
+            )}
+            <p className="mt-3 text-center text-sm text-dark-text-secondary">
+              {step.alt || "Example verification result"}
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

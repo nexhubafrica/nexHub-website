@@ -1,83 +1,89 @@
-"use client";
-
-import { motion } from "framer-motion";
 import NexHubLogo from "./NexHubLogo";
+import DeviceShot from "./visuals/DeviceShot";
+import RecordPreview from "./visuals/RecordPreview";
 
 export default function Hero() {
   return (
     <section
-      className="relative min-h-[100svh] flex items-center overflow-hidden pt-20 pb-16"
+      className="relative overflow-hidden pt-24 pb-16 sm:pt-28 lg:pb-24"
       aria-label="Hero"
     >
-      <div className="absolute inset-0 bg-linear-to-b from-dark-bg via-dark-bg to-dark-bg-alt" />
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div
-          className="w-[min(90vw,720px)] h-[min(90vw,720px)] rounded-full opacity-25"
-          style={{
-            background:
-              "radial-gradient(circle, rgba(79, 163, 125, 0.45) 0%, transparent 70%)",
-          }}
-        />
-      </div>
+      <div className="absolute inset-0 bg-dark-bg" />
+      <div
+        className="pointer-events-none absolute -right-24 top-24 h-105 w-105 rounded-full opacity-30"
+        style={{
+          background:
+            "radial-gradient(circle, rgba(86, 179, 138, 0.35) 0%, transparent 68%)",
+        }}
+      />
 
-      <div className="relative z-10 mx-auto w-full max-w-5xl px-6">
-        <motion.div
-          className="mb-8 flex items-center gap-3 text-dark-primary-bright"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
-          <NexHubLogo className="h-12 w-12 sm:h-14 sm:w-14" />
-          <div>
-            <p className="text-2xl sm:text-3xl font-bold tracking-tight text-dark-text">
-              NexHub
-            </p>
-            <p className="text-sm sm:text-base font-semibold italic text-dark-primary-bright">
-              Where learning becomes trusted
-            </p>
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 px-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-10">
+        <div className="rise-in">
+          <div className="mb-6 flex items-center gap-3">
+            <NexHubLogo className="h-11 w-11 sm:h-12 sm:w-12" />
+            <div>
+              <p className="text-xl font-bold tracking-tight text-dark-text sm:text-2xl">
+                NexHub
+              </p>
+              <p className="text-sm font-semibold italic text-dark-primary-bright">
+                Where learning becomes trusted
+              </p>
+            </div>
           </div>
-        </motion.div>
 
-        <motion.h1
-          className="max-w-4xl text-4xl sm:text-5xl md:text-6xl font-bold text-dark-text leading-[1.1] tracking-tight"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.05 }}
-        >
-          School life, saved as it happens — so the record stands forever.
-        </motion.h1>
+          <h1 className="max-w-xl text-4xl font-bold leading-[1.08] tracking-tight text-dark-text sm:text-5xl">
+            School life, saved as it happens — so the record stands forever.
+          </h1>
 
-        <motion.p
-          className="mt-6 max-w-2xl text-lg md:text-xl text-dark-text-secondary leading-relaxed"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-        >
-          One app for students, teachers, and parents. Not just exam results —
-          the growth of a student through school. Everyday learning, activities,
-          and participation quietly become a cryptographic NexHub Record when it
-          matters: scholarships, admissions, or their own history.
-        </motion.p>
+          <p className="mt-5 max-w-md text-base leading-relaxed text-dark-text-secondary sm:text-lg">
+            One app for students, teachers, and parents. The school seals that
+            trail as a NexHub Record when scholarships, admissions, or the
+            student’s own history need proof.
+          </p>
 
-        <motion.div
-          className="mt-10 flex flex-col sm:flex-row gap-3 sm:items-center"
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.25 }}
-        >
-          <a
-            href="mailto:hello@nexhub.africa?subject=School%20access%20request"
-            className="inline-flex items-center justify-center rounded-full bg-dark-primary px-7 py-3.5 text-base font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
-          >
-            Request school access
-          </a>
-          <a
-            href="#how-it-works"
-            className="inline-flex items-center justify-center px-3 py-3.5 text-base font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors"
-          >
-            See how school life flows
-          </a>
-        </motion.div>
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href="mailto:hello@nexhub.africa?subject=School%20access%20request"
+              className="inline-flex items-center justify-center rounded-full bg-dark-primary px-7 py-3.5 text-base font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
+            >
+              Request school access
+            </a>
+            <a
+              href="#how-it-works"
+              className="inline-flex items-center justify-center px-3 py-3.5 text-base font-medium text-dark-text-secondary hover:text-dark-primary-bright transition-colors"
+            >
+              See how school life flows
+            </a>
+          </div>
+        </div>
+
+        <div className="rise-in relative mx-auto w-full max-w-130 sm:h-140">
+          <div className="absolute right-0 top-4 hidden w-2/5 sm:block" aria-hidden>
+            <DeviceShot
+              src="/screenshots/mobile-teacher-inbox.png"
+              alt=""
+              sizes="180px"
+            />
+          </div>
+          <div className="absolute left-0 top-14 hidden w-2/5 sm:block" aria-hidden>
+            <DeviceShot
+              src="/screenshots/mobile-parent-dashboard.png"
+              alt=""
+              sizes="180px"
+            />
+          </div>
+          <div className="relative z-10 mx-auto w-[68%] sm:absolute sm:left-1/2 sm:top-0 sm:w-[52%] sm:-translate-x-1/2">
+            <DeviceShot
+              src="/screenshots/mobile-student-home.png"
+              alt="Student home in the NexHub app, with a teacher inbox and parent view beside it"
+              priority
+              sizes="280px"
+            />
+          </div>
+          <div className="relative z-20 mx-auto -mt-24 w-full max-w-sm sm:absolute sm:bottom-0 sm:left-1/2 sm:mt-0 sm:w-[84%] sm:-translate-x-1/2">
+            <RecordPreview variant="compact" />
+          </div>
+        </div>
       </div>
     </section>
   );

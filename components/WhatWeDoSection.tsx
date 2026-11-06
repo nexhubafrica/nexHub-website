@@ -1,98 +1,72 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
-import {
-  HiDocumentText,
-  HiAcademicCap,
-  HiCalendar,
-  HiClipboardCheck,
-  HiShieldCheck,
-  HiUsers,
-} from "react-icons/hi";
+import { useReducedMotion } from "framer-motion";
+import { useState } from "react";
+import RecordPreview from "./visuals/RecordPreview";
 
-const recordItems = [
-  {
-    icon: HiDocumentText,
-    text: "RedNote (Read Every Day) — students read a topic, then explain it in their own words (note, video, voice, PDF) so classmates — and students in other schools on NexHub — can learn from them too",
-  },
-  {
-    icon: HiClipboardCheck,
-    text: "Activities — spelling bees, inter-house sports, leading a club, competitions across the year — teacher-verified and saved for when a recommendation needs real proof",
-  },
-  {
-    icon: HiCalendar,
-    text: "Events & class pulse — RSVPs, participation, timetables, exams, announcements, and polls that reach students and parents together",
-  },
-  {
-    icon: HiAcademicCap,
-    text: "Teacher verification — educators mark what is true so the feed is not filled with rubbish; verified RedNotes carry that mark for others to trust",
-  },
-  {
-    icon: HiUsers,
-    text: "Parents see the whole child trail — learning notes, activities, event participation, attendance, assignments, and school announcements — without chasing chats",
-  },
-  {
-    icon: HiShieldCheck,
-    text: "NexHub Records at the finish — cryptographic, immutable, tamper-evident proof for scholarships, universities, programs — or simply the student’s own history they grew from scratch",
-  },
+const scraps = [
+  { title: "Result sheet", detail: "SS1 third term · PDF", rotate: "-7deg" },
+  { title: "Chat screenshot", detail: "Sports day, lost in a thread", rotate: "5deg" },
+  { title: "Paper certificate", detail: "Spelling bee · one afternoon", rotate: "-2deg" },
+  { title: "Club register", detail: "Photo of a handwritten list", rotate: "8deg" },
 ];
 
 export default function WhatWeDoSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
+  const reduce = useReducedMotion();
+  const [showRecord, setShowRecord] = useState(false);
+  const sealed = reduce ? true : showRecord;
 
   return (
-    <section ref={ref} className="relative py-24 px-6 bg-dark-bg">
-      <div className="mx-auto max-w-5xl">
-        <motion.div
-          className="mb-12 max-w-3xl"
-          initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-dark-text leading-tight">
-            Learning that becomes trusted — day by day.
+    <section className="relative bg-dark-bg px-6 py-24" id="story">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
+            The usual ending
+          </p>
+          <h2 className="text-4xl font-bold leading-tight text-dark-text md:text-5xl">
+            School life ends up in pieces.
           </h2>
-          <p className="mt-5 text-lg text-dark-text-secondary leading-relaxed">
-            This is not a digital report card. Exam scores alone do not tell the
-            story. NexHub captures how a student grows through school — how they
-            learn out loud, participate, lead, and show up — so teachers, parents,
-            and institutions can trust the full picture.
+          <p className="mt-4 max-w-md text-lg leading-relaxed text-dark-text-secondary">
+            Results in a PDF. Activities in a chat. Leadership on a certificate
+            nobody can find in SS3. NexHub keeps that trail while it is
+            happening, then the school seals it.
           </p>
-        </motion.div>
+          {reduce ? null : (
+            <button
+              type="button"
+              className="mt-6 text-sm font-semibold text-dark-primary-bright underline-offset-4 hover:underline"
+              aria-pressed={sealed}
+              onClick={() => setShowRecord((v) => !v)}
+            >
+              {sealed ? "Show the scattered pieces" : "Show the sealed record"}
+            </button>
+          )}
+        </div>
 
-        <motion.div
-          className="rounded-3xl border border-dark-card-alt bg-dark-card p-8 md:p-10"
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.1 }}
-        >
-          <h3 className="text-2xl font-bold text-dark-text mb-8">
-            What accumulates into a{" "}
-            <span className="text-dark-primary-bright">NexHub Record</span>
-          </h3>
-          <ul className="space-y-5">
-            {recordItems.map((item) => {
-              const Icon = item.icon;
-              return (
-                <li key={item.text} className="flex gap-4 items-start">
-                  <span className="mt-0.5 text-dark-primary-bright shrink-0">
-                    <Icon className="h-7 w-7" />
-                  </span>
-                  <span className="text-base md:text-lg text-dark-text-secondary leading-relaxed">
-                    {item.text}
-                  </span>
-                </li>
-              );
-            })}
-          </ul>
-          <p className="mt-8 text-sm text-dark-text-secondary/90 leading-relaxed border-t border-dark-card-alt pt-6">
-            RedNotes can be private, school-only, LGA-wide, or open to everyone
-            on NexHub. NexHub Records stay private until the school issues them —
-            sealed cryptographically so they cannot be edited after the fact.
-          </p>
-        </motion.div>
+        <div className={reduce ? "space-y-10" : ""}>
+          {reduce || !sealed ? (
+            <div className="relative mx-auto h-105 max-w-md">
+              {scraps.map((scrap, i) => (
+                <div
+                  key={scrap.title}
+                  className="absolute w-[78%] rounded-xl border border-[#d7e8de] bg-[#f4faf6] px-4 py-3 text-[#10241c] shadow-lg"
+                  style={{
+                    top: `${12 + i * 78}px`,
+                    left: i % 2 === 0 ? "0%" : "18%",
+                    rotate: reduce ? "0deg" : scrap.rotate,
+                  }}
+                >
+                  <p className="text-[11px] font-bold uppercase tracking-wider text-[#00674F]">
+                    Unsorted
+                  </p>
+                  <p className="mt-1 font-semibold">{scrap.title}</p>
+                  <p className="text-sm text-[#3d5c4e]">{scrap.detail}</p>
+                </div>
+              ))}
+            </div>
+          ) : null}
+          {reduce || sealed ? <RecordPreview variant="full" /> : null}
+        </div>
       </div>
     </section>
   );
