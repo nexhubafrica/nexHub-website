@@ -13,10 +13,12 @@ import TrustSecuritySection from "@/components/TrustSecuritySection";
 import StatusSection from "@/components/StatusSection";
 import Footer from "@/components/Footer";
 import BackToTopButton from "@/components/BackToTopButton";
+import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   return (
     <>
+      <LoadingScreen />
       <Navbar />
       <main className="min-h-screen overflow-x-hidden">
         <Hero />
