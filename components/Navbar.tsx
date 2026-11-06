@@ -39,7 +39,7 @@ export default function Navbar() {
                 href="#access"
                 className="rounded-full bg-dark-primary px-4 py-2 text-sm font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
               >
-                Request access
+                Start with your school
               </a>
             </>
           ) : (
@@ -47,7 +47,7 @@ export default function Navbar() {
               href="/#access"
               className="rounded-full bg-dark-primary px-4 py-2 text-sm font-bold text-dark-bg hover:bg-dark-primary-bright transition-colors"
             >
-              Request access
+              Start with your school
             </Link>
           )}
         </nav>

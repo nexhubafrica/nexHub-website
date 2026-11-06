@@ -1,7 +1,6 @@
 "use client";
 
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 import ScreenshotFrame from "./ScreenshotFrame";
 import RolePhoneCarousel, { type RoleSlide } from "./RolePhoneCarousel";
 
@@ -63,22 +62,16 @@ const parentSlides: RoleSlide[] = [
  * School portal sits underneath.
  */
 export default function ProductSurfacesSection() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-80px" });
-
   return (
     <section
       id="product"
-      ref={ref}
       className="relative py-28 px-6 bg-dark-bg-alt overflow-hidden"
       aria-labelledby="product-heading"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
           className="mb-16 max-w-3xl"
-          initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7 }}
+          initial={false}
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-dark-primary-bright">
             In the product
@@ -98,9 +91,7 @@ export default function ProductSurfacesSection() {
 
         <motion.div
           className="relative mx-auto flex max-w-4xl items-end justify-center gap-3 sm:gap-5 md:gap-8 px-2"
-          initial={{ opacity: 0, y: 28 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.08 }}
+          initial={false}
         >
           <div className="w-[28%] max-w-[200px] translate-y-4 sm:translate-y-6 opacity-95">
             <RolePhoneCarousel
@@ -128,9 +119,7 @@ export default function ProductSurfacesSection() {
 
         <motion.div
           className="mt-14 grid gap-6 md:grid-cols-2"
-          initial={{ opacity: 0, y: 24 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.7, delay: 0.16 }}
+          initial={false}
         >
           <ScreenshotFrame
             src="/screenshots/admin-students-list.png"
